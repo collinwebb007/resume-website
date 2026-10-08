@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" shape-rendering="crispEdges">
+  <!-- Planet 5: Banded Orange Gas Giant (Old Bay style) -->
+  <defs>
+    <clipPath id="jup-clip">
+      <circle cx="32" cy="32" r="24"/>
+    </clipPath>
+  </defs>
+  <!-- Atmospheric Glow -->
+  <circle cx="32" cy="32" r="24" fill="#f97316" filter="blur(2px)" opacity="0.35"/>
+  <!-- Base Sphere -->
+  <circle cx="32" cy="32" r="24" fill="#ea580c"/>
+  <!-- Surface Texture (Clipped) -->
+  <g clip-path="url(#jup-clip)">
+    <!-- Alternating atmospheric bands -->
+    <rect x="8" y="12" width="48" height="4" fill="#c2410c"/>
+    <rect x="8" y="16" width="48" height="3" fill="#f97316"/>
+    <rect x="8" y="19" width="48" height="2" fill="#ffedd5"/>
+    <rect x="8" y="21" width="48" height="5" fill="#9a3412"/>
+    <rect x="8" y="26" width="48" height="3" fill="#fdba74"/>
+    <rect x="8" y="29" width="48" height="6" fill="#7c2d12"/>
+    <rect x="8" y="35" width="48" height="4" fill="#ea580c"/>
+    <rect x="8" y="39" width="48" height="3" fill="#fef08a"/>
+    <rect x="8" y="42" width="48" height="6" fill="#9a3412"/>
+    <rect x="8" y="48" width="48" height="5" fill="#7c2d12"/>
+
+    <!-- Wavy atmospheric turbulence ripples -->
+    <rect x="18" y="24" width="8" height="3" fill="#fef3c7"/>
+    <rect x="36" y="24" width="12" height="3" fill="#fef3c7"/>
+    <rect x="14" y="32" width="10" height="3" fill="#ffedd5"/>
+    <rect x="32" y="32" width="16" height="3" fill="#fed7aa"/>
+
+    <!-- Great Red Storm Vortex -->
+    <ellipse cx="40" cy="38" rx="7" ry="4" fill="#b91c1c"/>
+    <ellipse cx="40" cy="38" rx="4" ry="2" fill="#7f1d1d"/>
+    <ellipse cx="38" cy="37" rx="2" ry="1" fill="#fca5a5"/>
+
+    <!-- Shadow crescent on right -->
+    <path d="M26 56 C38 56 56 44 56 24 C56 38 46 52 34 56 Z" fill="#431407" opacity="0.6"/>
+
+    <!-- Highlight Rim on Top Left -->
+    <path d="M12 24 C10 28 9 32 9 32 C9 20 19 10 32 9 C32 9 20 12 12 24 Z" fill="#fef3c7" opacity="0.6"/>
+  </g>
+  <!-- Outer Outline Ring -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#7c2d12" stroke-width="1.5"/>
+</svg>

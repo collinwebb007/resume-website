@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" shape-rendering="crispEdges">
+  <!-- Planet 6: Caramel Marbled Gas World (Pabst style) -->
+  <defs>
+    <clipPath id="caramel-clip">
+      <circle cx="32" cy="32" r="24"/>
+    </clipPath>
+  </defs>
+  <!-- Atmospheric Glow -->
+  <circle cx="32" cy="32" r="24" fill="#d97706" filter="blur(2px)" opacity="0.3"/>
+  <!-- Base Sphere -->
+  <circle cx="32" cy="32" r="24" fill="#fde68a"/>
+  <!-- Surface Texture (Clipped) -->
+  <g clip-path="url(#caramel-clip)">
+    <!-- Swirling caramel bands -->
+    <path d="M8 22 Q 24 16, 40 26 T 56 18 L 56 34 Q 40 40, 24 30 T 8 38 Z" fill="#d97706"/>
+    <path d="M8 36 Q 26 30, 42 42 T 56 34 L 56 50 Q 38 56, 20 46 T 8 52 Z" fill="#b45309"/>
+    
+    <!-- Fine striations -->
+    <rect x="12" y="14" width="40" height="2" fill="#b45309"/>
+    <rect x="10" y="26" width="44" height="2" fill="#fef3c7"/>
+    <rect x="14" y="32" width="36" height="3" fill="#78350f"/>
+    <rect x="18" y="44" width="32" height="3" fill="#92400e"/>
+    <rect x="24" y="48" width="24" height="2" fill="#fef3c7"/>
+
+    <!-- Dark shadow crescent on bottom right -->
+    <path d="M26 56 C38 56 56 44 56 24 C56 38 46 52 34 56 Z" fill="#451a03" opacity="0.6"/>
+
+    <!-- Highlight Rim on Top Left -->
+    <path d="M12 24 C10 28 9 32 9 32 C9 20 19 10 32 9 C32 9 20 12 12 24 Z" fill="#ffffff" opacity="0.6"/>
+  </g>
+  <!-- Outer Outline Ring -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#92400e" stroke-width="1.5"/>
+</svg>

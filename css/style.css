@@ -319,27 +319,90 @@ body {
 }
 
 /* =============================================================
-   SIMPLISTIC NASA HOMEPAGE STAGE (CENTRAL TV + ICONS SURROUNDING)
+   SIMPLISTIC NASA HOMEPAGE STAGE (CENTRAL TV + FLOATING PLANETS)
+   Modeled after the floating celestial style with vintage NASA vibe
    ============================================================= */
 .nasa-home-stage {
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 3rem 0;
+  width: 100%;
 }
 
-/* Central Arena Grid */
-.nasa-stage-grid {
-  display: grid;
-  grid-template-columns: 240px 1fr 240px;
-  align-items: center;
-  gap: 2rem;
+/* Starburst Cross Flares in the Deep Starfield (like in screenshot) */
+.starburst-field {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1240px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.starburst-flare {
+  position: absolute;
+  pointer-events: none;
+  animation: flareTwinkle 3.2s ease-in-out infinite alternate;
+}
+
+.starburst-flare::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--flare-size, 18px);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.starburst-flare::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5px;
+  height: var(--flare-size, 18px);
+  background: linear-gradient(180deg, transparent, #ffffff, transparent);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.starburst-flare .flare-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #38bdf8, 0 0 12px #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes flareTwinkle {
+  0% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.25); }
+  100% { opacity: 0.35; transform: scale(0.9); }
+}
+
+/* Central Arena Grid: Left Orbit, Center TV, Right Orbit */
+.cosmos-arena {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1300px;
   position: relative;
+  z-index: 20;
 }
 
 /* 1. CENTRAL VINTAGE NASA CRT TV */
@@ -353,7 +416,7 @@ body {
 
 .nasa-crt-monitor {
   width: 100%;
-  max-width: 600px;
+  max-width: 560px;
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 60%, #020617 100%);
   border: 8px solid #334155;
   border-radius: var(--radius-lg);
@@ -429,83 +492,144 @@ body {
   justify-content: center;
 }
 
-/* 2. SURROUNDING CLICKABLE ICON BUTTONS */
-.topic-icon-card {
-  background: var(--nasa-panel);
-  border: 1px solid var(--nasa-border);
-  border-radius: var(--radius-sm);
-  padding: 0.95rem 1rem;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
+/* 2. FLOATING COSMIC ORBITS (Left and Right Flanks) */
+.cosmos-orbit-left,
+.cosmos-orbit-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2.8rem;
+  column-gap: 1.5rem;
   align-items: center;
-  gap: 0.85rem;
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(14px);
+  justify-items: center;
   position: relative;
-  z-index: 25;
+}
+
+/* 3. INDIVIDUAL FLOATING PLANET NODES */
+.floating-planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
+  z-index: 25;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
 }
 
-.topic-icon-card:hover {
-  transform: translateY(-6px) scale(1.05);
-  border-color: var(--nasa-cyan);
-  background: var(--nasa-panel-hover);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(56, 189, 248, 0.4);
-}
-
-.icon-graphic-box {
-  width: 46px;
-  height: 46px;
-  flex-shrink: 0;
-  background: #0a0f1d;
-  border: 1px solid var(--nasa-border);
-  border-radius: var(--radius-sm);
+.planet-halo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
 }
 
-.topic-text-col {
-  display: flex;
-  flex-direction: column;
+.planet-sprite {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.75));
+  transition: transform 0.3s ease;
 }
 
-.topic-tag {
+/* Ringed planets are slightly wider to account for rings */
+.planet-ringed .planet-sprite {
+  width: 76px;
+  height: 58px;
+}
+
+.planet-text {
+  margin-top: 0.55rem;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--nasa-cyan);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.topic-label {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.73rem;
   font-weight: 700;
-  color: var(--text-white);
-  line-height: 1.2;
-  margin: 0.1rem 0;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
+  line-height: 1.22;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
 }
 
-.topic-dest-arrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--nasa-red);
-  font-weight: bold;
+/* Planet Hover Effects */
+.floating-planet:hover {
+  transform: scale(1.16) translateY(-5px) !important;
 }
 
-/* Floating Animations */
-.float-1 { animation: floatNasa 6s ease-in-out infinite alternate; }
-.float-2 { animation: floatNasa 7s ease-in-out 1s infinite alternate-reverse; }
-.float-3 { animation: floatNasa 5.5s ease-in-out 0.5s infinite alternate; }
-
-@keyframes floatNasa {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(4px); }
+.floating-planet:hover .planet-halo {
+  filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.9));
 }
+
+.floating-planet:hover .planet-text {
+  color: var(--nasa-cyan);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.9), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Zero-Gravity Floating Drift Keyframes */
+@keyframes zeroGDrift1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+  100% { transform: translateY(4px) rotate(-1deg); }
+}
+
+@keyframes zeroGDrift2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(11px) rotate(-2deg); }
+  100% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes zeroGDrift3 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-1.5deg); }
+  100% { transform: translateY(6px) rotate(2deg); }
+}
+
+@keyframes zeroGDrift4 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(1.8deg); }
+  100% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes zeroGDrift5 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(1.2deg); }
+  100% { transform: translateY(7px) rotate(-1.5deg); }
+}
+
+@keyframes zeroGDrift6 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(11px) rotate(-1.5deg); }
+  100% { transform: translateY(-9px) rotate(1.5deg); }
+}
+
+@keyframes zeroGDrift7 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-11px) rotate(2deg); }
+  100% { transform: translateY(5px) rotate(-2deg); }
+}
+
+@keyframes zeroGDrift8 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-1deg); }
+  100% { transform: translateY(-10px) rotate(1.2deg); }
+}
+
+.float-planet-1 { animation: zeroGDrift1 6.5s ease-in-out infinite alternate; }
+.float-planet-2 { animation: zeroGDrift2 7.8s ease-in-out 0.8s infinite alternate-reverse; }
+.float-planet-3 { animation: zeroGDrift3 5.9s ease-in-out 1.4s infinite alternate; }
+.float-planet-4 { animation: zeroGDrift4 8.2s ease-in-out 0.3s infinite alternate-reverse; }
+.float-planet-5 { animation: zeroGDrift5 6.8s ease-in-out 1.9s infinite alternate; }
+.float-planet-6 { animation: zeroGDrift6 7.3s ease-in-out 0.9s infinite alternate-reverse; }
+.float-planet-7 { animation: zeroGDrift7 5.7s ease-in-out 1.2s infinite alternate; }
+.float-planet-8 { animation: zeroGDrift8 7.0s ease-in-out 1.7s infinite alternate-reverse; }
+
+/* Floating Decor Keyframes */
+.float-decor-1 { animation: zeroGDrift3 7.5s ease-in-out infinite alternate; }
+.float-decor-2 { animation: zeroGDrift5 8.2s ease-in-out 1.2s infinite alternate-reverse; }
+.float-decor-3 { animation: zeroGDrift1 6.9s ease-in-out 0.5s infinite alternate; }
+.float-decor-4 { animation: zeroGDrift7 7.7s ease-in-out 1.8s infinite alternate-reverse; }
 
 /* =============================================================
    VINTAGE NASA BACKGROUND DECORATIONS
@@ -1066,21 +1190,51 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  .nasa-stage-grid {
+  .cosmos-arena {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.2rem;
   }
   .center-tv-wrapper {
-    order: -1;
+    order: 1;
     width: 100%;
+    max-width: 560px;
   }
-  .topic-icon-card {
+  .cosmos-orbit-left {
+    order: 2;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
     width: 100%;
-    max-width: 440px;
+    max-width: 640px;
+  }
+  .cosmos-orbit-right {
+    order: 3;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 640px;
+  }
+  .floating-planet {
+    transform: none !important;
   }
   .edu-cert-split {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .cosmos-orbit-left,
+  .cosmos-orbit-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+  }
+  .planet-sprite {
+    width: 48px;
+    height: 48px;
+  }
+  .planet-ringed .planet-sprite {
+    width: 64px;
+    height: 48px;
   }
 }

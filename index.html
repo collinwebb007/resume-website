@@ -83,68 +83,57 @@
     
     <div class="nasa-home-stage">
       
+      <!-- Starbursts in background (twinkling star flares like in the screenshot) -->
+      <div class="starburst-field" aria-hidden="true">
+        <div class="starburst-flare" style="top: 10%; left: 14%; --flare-size: 20px; animation-delay: 0s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 16%; left: 34%; --flare-size: 14px; animation-delay: 1.2s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 26%; left: 6%; --flare-size: 18px; animation-delay: 0.6s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 12%; right: 15%; --flare-size: 22px; animation-delay: 1.8s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 28%; right: 30%; --flare-size: 15px; animation-delay: 0.9s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 48%; right: 7%; --flare-size: 24px; animation-delay: 2.1s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 66%; left: 9%; --flare-size: 16px; animation-delay: 1.4s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 76%; right: 19%; --flare-size: 20px; animation-delay: 0.4s;"><span class="flare-core"></span></div>
+        <div class="starburst-flare" style="top: 56%; left: 48%; --flare-size: 13px; animation-delay: 2.5s;"><span class="flare-core"></span></div>
+      </div>
+
       <!-- =========================================================
-           ARENA: CENTRAL NASA CRT TV SURROUNDED BY ICONS ON SIDES
+           FLOATING COSMIC ARENA: CENTRAL TV SURROUNDED BY FLOATING PLANETS
            ========================================================= -->
-      <div class="nasa-stage-grid">
+      <div class="cosmos-arena">
         
-        <!-- LEFT ICONS COLUMN (3 ITEMS) -->
-        <div style="display: flex; flex-direction: column; gap: 1.4rem;">
+        <!-- LEFT ORBIT (4 FLOATING PLANETS) -->
+        <div class="cosmos-orbit-left">
           
-          <!-- Icon 1: Crew Dossier / About -->
-          <a href="about.html" class="topic-icon-card float-1">
-            <div class="icon-graphic-box">
-              <!-- Astronaut / Crew Icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                <circle cx="12" cy="7" r="4"/>
-                <path d="M5.5 21V19C5.5 15.6863 8.18629 13 11.5 13H12.5C15.8137 13 18.5 15.6863 18.5 19V21"/>
-                <circle cx="12" cy="7" r="1.5" fill="#ea384c"/>
-              </svg>
+          <!-- Planet 1: Ice Moon (Crew Dossier) -->
+          <a href="about.html" class="floating-planet float-planet-1" style="transform: translate(-10px, -20px);" title="Crew Dossier">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-moon.svg" alt="Crew Dossier Planet" class="planet-sprite">
             </div>
-            <div class="topic-text-col">
-              <span class="topic-tag">SECTION 01</span>
-              <span class="topic-label">CREW DOSSIER</span>
-              <span class="topic-dest-arrow">VIEW LOGS →</span>
-            </div>
+            <span class="planet-text">CREW<br>DOSSIER</span>
           </a>
 
-          <!-- Icon 2: Warehouse Robotics -->
-          <a href="projects.html#project-1" class="topic-icon-card float-2">
-            <div class="icon-graphic-box">
-              <!-- Robotics Arm Icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                <rect x="4" y="18" width="16" height="4" rx="1"/>
-                <circle cx="12" cy="18" r="2.5" fill="#ea384c"/>
-                <line x1="12" y1="15.5" x2="8" y2="9"/>
-                <circle cx="8" cy="9" r="2" fill="#38bdf8"/>
-                <line x1="8" y1="9" x2="16" y2="4"/>
-                <circle cx="16" cy="4" r="2" fill="#ea384c"/>
-              </svg>
+          <!-- Planet 2: Mars Dynamo (Robotics Systems) -->
+          <a href="projects.html#project-1" class="floating-planet float-planet-2" style="transform: translate(16px, 18px);" title="Robotics Systems">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-mars.svg" alt="Robotics Systems Planet" class="planet-sprite">
             </div>
-            <div class="topic-text-col">
-              <span class="topic-tag">PAYLOAD 02</span>
-              <span class="topic-label">ROBOTICS SYSTEMS</span>
-              <span class="topic-dest-arrow">STORAGE AUTOMATION →</span>
-            </div>
+            <span class="planet-text">ROBOTICS<br>SYSTEMS</span>
           </a>
 
-          <!-- Icon 3: SolidWorks CAD Blueprints -->
-          <a href="projects.html#project-3" class="topic-icon-card float-3">
-            <div class="icon-graphic-box">
-              <!-- CAD Isometric Cube Icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                <path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/>
-                <line x1="12" y1="12" x2="12" y2="22"/>
-                <line x1="12" y1="12" x2="21" y2="7"/>
-                <line x1="12" y1="12" x2="3" y2="7"/>
-                <circle cx="12" cy="12" r="1.5" fill="#ea384c"/>
-              </svg>
+          <!-- Planet 3: Ice Ring Titan (SolidWorks CAD) -->
+          <a href="projects.html#project-3" class="floating-planet planet-ringed float-planet-3" style="transform: translate(-20px, -8px);" title="SolidWorks CAD">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-ice-ring.svg" alt="SolidWorks CAD Planet" class="planet-sprite">
             </div>
-            <div class="topic-text-col">
-              <span class="topic-tag">BLUEPRINT 03</span>
-              <span class="topic-label">SOLIDWORKS CAD</span>
-              <span class="topic-dest-arrow">CSWA MECHANICAL →</span>
+            <span class="planet-text">SOLIDWORKS<br>CAD</span>
+          </a>
+
+          <!-- Planet 4: Peach Sandy Moon (BYU-I Analytics) -->
+          <a href="about.html#education" class="floating-planet float-planet-4" style="transform: translate(14px, 16px);" title="BYU-I Analytics">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-peach.svg" alt="BYU-I Analytics Planet" class="planet-sprite">
             </div>
+            <span class="planet-text">BYU-I<br>ANALYTICS</span>
           </a>
 
         </div>
@@ -183,63 +172,39 @@
           </div>
         </div>
 
-        <!-- RIGHT ICONS COLUMN (3 ITEMS) -->
-        <div style="display: flex; flex-direction: column; gap: 1.4rem;">
+        <!-- RIGHT ORBIT (4 FLOATING PLANETS) -->
+        <div class="cosmos-orbit-right">
           
-          <!-- Icon 4: Flight Archives (Projects) -->
-          <a href="projects.html" class="topic-icon-card float-2">
-            <div class="icon-graphic-box">
-              <!-- Payload Box Icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                <path d="M21 8V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V8"/>
-                <path d="M23 4H1V8H23V4Z"/>
-                <path d="M10 12H14" stroke="#ea384c"/>
-              </svg>
+          <!-- Planet 5: Orange Banded Jupiter (AI Agent Core) -->
+          <a href="projects.html#project-2" class="floating-planet float-planet-5" style="transform: translate(-14px, -18px);" title="AI Agent Core">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-jupiter.svg" alt="AI Agent Core Planet" class="planet-sprite">
             </div>
-            <div class="topic-text-col">
-              <span class="topic-tag">SECTION 04</span>
-              <span class="topic-label">FLIGHT ARCHIVES</span>
-              <span class="topic-dest-arrow">ALL PROJECTS →</span>
-            </div>
+            <span class="planet-text">AI AGENT<br>CORE</span>
           </a>
 
-          <!-- Icon 5: Neural AI Core -->
-          <a href="projects.html#project-2" class="topic-icon-card float-1">
-            <div class="icon-graphic-box">
-              <!-- Microprocessor Chip Icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                <rect x="5" y="5" width="14" height="14" rx="2"/>
-                <circle cx="12" cy="12" r="3" fill="#ea384c"/>
-                <line x1="12" y1="1" x2="12" y2="5"/>
-                <line x1="12" y1="19" x2="12" y2="23"/>
-                <line x1="1" y1="12" x2="5" y2="12"/>
-                <line x1="19" y1="12" x2="23" y2="12"/>
-              </svg>
+          <!-- Planet 6: Caramel Marbled Gas World (Flight Archives) -->
+          <a href="projects.html" class="floating-planet float-planet-6" style="transform: translate(22px, 12px);" title="Flight Archives">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-caramel.svg" alt="Flight Archives Planet" class="planet-sprite">
             </div>
-            <div class="topic-text-col">
-              <span class="topic-tag">SYSTEMS 05</span>
-              <span class="topic-label">AI AGENT CORE</span>
-              <span class="topic-dest-arrow">LLM & RAG →</span>
-            </div>
+            <span class="planet-text">FLIGHT<br>ARCHIVES</span>
           </a>
 
-          <!-- Icon 6: Mission Analytics (BYU-I) -->
-          <a href="about.html#education" class="topic-icon-card float-3">
-            <div class="icon-graphic-box">
-              <!-- Analytics Orbit Icon -->
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"/>
-                <line x1="12" y1="20" x2="12" y2="4"/>
-                <line x1="6" y1="20" x2="6" y2="14"/>
-                <circle cx="12" cy="4" r="1.5" fill="#ea384c"/>
-                <circle cx="18" cy="10" r="1.5" fill="#38bdf8"/>
-              </svg>
+          <!-- Planet 7: Golden Saturn Ringed (Comms Link) -->
+          <a href="contact.html" class="floating-planet planet-ringed float-planet-7" style="transform: translate(-18px, 16px);" title="Comms Transmission">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-saturn.svg" alt="Comms Transmission Planet" class="planet-sprite">
             </div>
-            <div class="topic-text-col">
-              <span class="topic-tag">DEGREE 06</span>
-              <span class="topic-label">BYU-I ANALYTICS</span>
-              <span class="topic-dest-arrow">BUSINESS ANALYTICS →</span>
+            <span class="planet-text">COMMS<br>LINK</span>
+          </a>
+
+          <!-- Planet 8: Earth Terra (GitHub Source Node) -->
+          <a href="https://github.com/collinwebb007" target="_blank" rel="noopener noreferrer" class="floating-planet float-planet-8" style="transform: translate(12px, -12px);" title="GitHub Node">
+            <div class="planet-halo">
+              <img src="assets/planets/planet-earth.svg" alt="GitHub Node Planet" class="planet-sprite">
             </div>
+            <span class="planet-text">GITHUB<br>NODE</span>
           </a>
 
         </div>
@@ -253,7 +218,7 @@
       <div class="nasa-decor-gallery">
         
         <!-- Decor 1: STS-8086 Mission Patch -->
-        <div class="nasa-decor-item nasa-mission-patch" title="NASA STS-8086 Mission Patch">
+        <div class="nasa-decor-item nasa-mission-patch float-decor-1" title="NASA STS-8086 Mission Patch">
           <svg width="42" height="42" viewBox="0 0 32 32" fill="none">
             <path d="M16 3L21 14H11L16 3Z" fill="#ea384c"/>
             <circle cx="16" cy="18" r="9" stroke="#38bdf8" stroke-width="1.8"/>
@@ -265,7 +230,7 @@
         </div>
 
         <!-- Decor 2: Apollo Lunar Trajectory Chart -->
-        <div class="nasa-decor-item apollo-chart-box" title="Apollo Lunar Trajectory Chart">
+        <div class="nasa-decor-item apollo-chart-box float-decor-2" title="Apollo Lunar Trajectory Chart">
           <div class="chart-header">
             <span>TRAJECTORY PLOT</span>
             <span style="color:#22c55e;">GO FOR TLI</span>
@@ -285,7 +250,7 @@
         </div>
 
         <!-- Decor 3: Space Shuttle Blueprint -->
-        <div class="nasa-decor-item shuttle-blueprint" title="Space Shuttle Orbiter Blueprint">
+        <div class="nasa-decor-item shuttle-blueprint float-decor-3" title="Space Shuttle Orbiter Blueprint">
           <svg width="45" height="55" viewBox="0 0 24 32" fill="none">
             <path d="M12 2L16 10V24L20 28V30H4V28L8 24V10L12 2Z" fill="#0f172a" stroke="#38bdf8" stroke-width="1.4"/>
             <polygon points="12,27 10,31 14,31" fill="#ea384c"/>
@@ -295,7 +260,7 @@
         </div>
 
         <!-- Decor 4: Mission Telemetry Module -->
-        <div class="nasa-decor-item telemetry-module" title="Mission Telemetry Status">
+        <div class="nasa-decor-item telemetry-module float-decor-4" title="Mission Telemetry Status">
           <div class="telemetry-row">
             <span>MISSION STATUS:</span>
             <span class="telemetry-val">NOMINAL</span>

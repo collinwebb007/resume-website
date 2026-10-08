@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 64" width="80" height="64" shape-rendering="crispEdges">
+  <!-- Planet 3: Ice Ring Titan (Dickies style) -->
+  <defs>
+    <clipPath id="ice-clip">
+      <circle cx="40" cy="32" r="18"/>
+    </clipPath>
+    <!-- Front Ring Clip: keep only ring in front of planet's lower-middle -->
+    <clipPath id="front-ring-clip">
+      <rect x="0" y="32" width="80" height="32"/>
+    </clipPath>
+  </defs>
+
+  <!-- 1. BACK RING (behind sphere) -->
+  <g transform="rotate(-15 40 32)">
+    <ellipse cx="40" cy="32" rx="36" ry="11" fill="none" stroke="#38bdf8" stroke-width="4" opacity="0.8"/>
+    <ellipse cx="40" cy="32" rx="37" ry="12" fill="none" stroke="#bae6fd" stroke-width="1.5" opacity="0.9"/>
+    <ellipse cx="40" cy="32" rx="31" ry="8" fill="none" stroke="#0284c7" stroke-width="1.8" opacity="0.6"/>
+  </g>
+
+  <!-- 2. BASE SPHERE -->
+  <circle cx="40" cy="32" r="18" fill="#38bdf8"/>
+
+  <!-- Surface Texture (Clipped) -->
+  <g clip-path="url(#ice-clip)">
+    <!-- Cyan atmospheric stripes -->
+    <rect x="20" y="18" width="40" height="4" fill="#0284c7"/>
+    <rect x="20" y="24" width="40" height="3" fill="#0369a1"/>
+    <rect x="20" y="30" width="40" height="6" fill="#0c4a6e"/>
+    <rect x="20" y="38" width="40" height="4" fill="#0284c7"/>
+    <rect x="20" y="44" width="40" height="6" fill="#082f49"/>
+
+    <!-- Light bands -->
+    <rect x="24" y="22" width="32" height="2" fill="#bae6fd"/>
+    <rect x="22" y="36" width="36" height="2" fill="#e0f2fe"/>
+
+    <!-- Shadow crescent on right -->
+    <path d="M38 50 C46 50 58 42 58 24 C58 36 50 48 38 50 Z" fill="#075985" opacity="0.8"/>
+
+    <!-- Highlight Rim on Top Left -->
+    <path d="M26 22 C24 26 23 30 23 30 C23 20 30 14 38 14 C38 14 30 16 26 22 Z" fill="#ffffff" opacity="0.7"/>
+  </g>
+
+  <!-- Outline Sphere -->
+  <circle cx="40" cy="32" r="18" fill="none" stroke="#0284c7" stroke-width="1.2"/>
+
+  <!-- 3. FRONT RING (in front of sphere) -->
+  <g clip-path="url(#front-ring-clip)" transform="rotate(-15 40 32)">
+    <ellipse cx="40" cy="32" rx="36" ry="11" fill="none" stroke="#38bdf8" stroke-width="4"/>
+    <ellipse cx="40" cy="32" rx="37" ry="12" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <ellipse cx="40" cy="32" rx="31" ry="8" fill="none" stroke="#0284c7" stroke-width="1.8"/>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" shape-rendering="crispEdges">
+  <!-- Planet 1: Ice Moon / Lunar Outpost -->
+  <defs>
+    <clipPath id="moon-clip">
+      <circle cx="32" cy="32" r="24"/>
+    </clipPath>
+  </defs>
+  <!-- Atmospheric Glow -->
+  <circle cx="32" cy="32" r="24" fill="#7dd3fc" filter="blur(2px)" opacity="0.3"/>
+  <!-- Base Sphere -->
+  <circle cx="32" cy="32" r="24" fill="#bae6fd"/>
+  <!-- Surface Texture & Craters (Clipped) -->
+  <g clip-path="url(#moon-clip)">
+    <!-- Darker blue midtone on lower half -->
+    <path d="M8 32 C8 45.25 18.75 56 32 56 C45.25 56 56 45.25 56 32 C48 38 38 42 26 40 C16 38 10 34 8 32 Z" fill="#38bdf8"/>
+    <!-- Deep shadow crescent on bottom right -->
+    <path d="M24 56 C38 56 56 46 56 26 C56 38 48 52 36 55 C30 56 26 56 24 56 Z" fill="#0369a1"/>
+    <path d="M36 56 C46 54 56 44 56 32 C56 44 48 54 36 56 Z" fill="#0c4a6e"/>
+
+    <!-- Crater 1 (Top Left) -->
+    <rect x="20" y="16" width="8" height="6" fill="#0284c7"/>
+    <rect x="22" y="18" width="6" height="4" fill="#0369a1"/>
+    <rect x="18" y="18" width="2" height="4" fill="#e0f2fe"/>
+    <rect x="20" y="14" width="6" height="2" fill="#e0f2fe"/>
+
+    <!-- Crater 2 (Center) -->
+    <rect x="28" y="26" width="10" height="8" fill="#0284c7"/>
+    <rect x="30" y="28" width="7" height="5" fill="#0c4a6e"/>
+    <rect x="26" y="28" width="2" height="6" fill="#f0f9ff"/>
+    <rect x="28" y="24" width="8" height="2" fill="#f0f9ff"/>
+
+    <!-- Crater 3 (Bottom Left) -->
+    <rect x="16" y="34" width="7" height="6" fill="#0369a1"/>
+    <rect x="18" y="36" width="4" height="3" fill="#0c4a6e"/>
+    <rect x="14" y="36" width="2" height="3" fill="#bae6fd"/>
+
+    <!-- Crater 4 (Top Right Small) -->
+    <rect x="38" y="18" width="5" height="4" fill="#0284c7"/>
+    <rect x="40" y="19" width="3" height="2" fill="#0369a1"/>
+    <rect x="37" y="19" width="1" height="2" fill="#e0f2fe"/>
+
+    <!-- Highlight Rim on Top Left -->
+    <path d="M12 24 C10 28 9 32 9 32 C9 20 19 10 32 9 C32 9 20 12 12 24 Z" fill="#ffffff" opacity="0.6"/>
+  </g>
+  <!-- Outer Outline Ring -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#0284c7" stroke-width="1.5"/>
+</svg>

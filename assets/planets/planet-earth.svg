@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" shape-rendering="crispEdges">
+  <!-- Planet 8: Earth / Terra (National Geographic style) -->
+  <defs>
+    <clipPath id="earth-clip">
+      <circle cx="32" cy="32" r="24"/>
+    </clipPath>
+  </defs>
+  <!-- Atmospheric Glow -->
+  <circle cx="32" cy="32" r="24" fill="#3b82f6" filter="blur(2px)" opacity="0.4"/>
+  <!-- Base Sphere (Oceans) -->
+  <circle cx="32" cy="32" r="24" fill="#2563eb"/>
+  <!-- Surface Continents & Clouds (Clipped) -->
+  <g clip-path="url(#earth-clip)">
+    <!-- Deep ocean shadows -->
+    <path d="M26 56 C38 56 56 44 56 24 C56 38 46 52 34 56 Z" fill="#1e3a8a"/>
+    <path d="M38 56 C48 52 56 42 56 30 C56 44 48 54 38 56 Z" fill="#172554"/>
+
+    <!-- Continent 1 (North America-ish on Top Left) -->
+    <path d="M14 16 L22 14 L26 18 L28 26 L22 28 L18 24 L12 22 Z" fill="#22c55e"/>
+    <rect x="18" y="18" width="6" height="4" fill="#16a34a"/>
+    
+    <!-- Continent 2 (South America-ish on Lower Left) -->
+    <path d="M20 30 L26 30 L28 38 L24 46 L20 44 L18 36 Z" fill="#22c55e"/>
+    <rect x="22" y="34" width="4" height="6" fill="#15803d"/>
+
+    <!-- Continent 3 (Eurasia / Africa on Center-Right) -->
+    <path d="M32 14 L44 14 L48 22 L44 28 L36 26 L30 20 Z" fill="#22c55e"/>
+    <path d="M34 28 L42 28 L40 40 L34 42 L32 34 Z" fill="#16a34a"/>
+    <rect x="36" y="16" width="6" height="6" fill="#15803d"/>
+
+    <!-- Ice Cap on North Pole -->
+    <ellipse cx="32" cy="10" rx="14" ry="4" fill="#f8fafc"/>
+
+    <!-- Swirling Clouds (Translucent White) -->
+    <!-- Cloud whorl 1 -->
+    <path d="M10 26 Q 24 20, 36 24 T 54 20" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.85"/>
+    <rect x="20" y="22" width="8" height="2" fill="#ffffff" opacity="0.9"/>
+    <!-- Cloud whorl 2 -->
+    <path d="M12 40 Q 28 36, 44 42 T 56 38" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.85"/>
+    <rect x="30" y="38" width="10" height="2" fill="#ffffff" opacity="0.9"/>
+    <!-- Tropical storm spiral -->
+    <circle cx="28" cy="22" r="3" fill="#ffffff" opacity="0.75"/>
+
+    <!-- Atmospheric Highlight on Top Left Rim -->
+    <path d="M12 24 C10 28 9 32 9 32 C9 20 19 10 32 9 C32 9 20 12 12 24 Z" fill="#93c5fd" opacity="0.6"/>
+  </g>
+  <!-- Outer Outline Ring -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#1d4ed8" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 64" width="84" height="64" shape-rendering="crispEdges">
+  <!-- Planet 7: Golden Saturn (Google style) -->
+  <defs>
+    <clipPath id="saturn-clip">
+      <circle cx="42" cy="32" r="18"/>
+    </clipPath>
+    <!-- Front Ring Clip: keep only ring in front of planet's lower-middle -->
+    <clipPath id="saturn-front-clip">
+      <rect x="0" y="32" width="84" height="32"/>
+    </clipPath>
+  </defs>
+
+  <!-- 1. BACK RINGS (behind sphere) -->
+  <g transform="rotate(-18 42 32)">
+    <ellipse cx="42" cy="32" rx="39" ry="12" fill="none" stroke="#ca8a04" stroke-width="4.5" opacity="0.8"/>
+    <ellipse cx="42" cy="32" rx="40" ry="13" fill="none" stroke="#fef08a" stroke-width="1.8" opacity="0.9"/>
+    <ellipse cx="42" cy="32" rx="33" ry="9" fill="none" stroke="#a16207" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- 2. BASE SPHERE -->
+  <circle cx="42" cy="32" r="18" fill="#facc15"/>
+
+  <!-- Surface Texture (Clipped) -->
+  <g clip-path="url(#saturn-clip)">
+    <!-- Golden atmospheric bands -->
+    <rect x="22" y="18" width="40" height="3" fill="#eab308"/>
+    <rect x="22" y="21" width="40" height="4" fill="#ca8a04"/>
+    <rect x="22" y="25" width="40" height="2" fill="#fef08a"/>
+    <rect x="22" y="27" width="40" height="6" fill="#a16207"/>
+    <rect x="22" y="33" width="40" height="4" fill="#eab308"/>
+    <rect x="22" y="37" width="40" height="3" fill="#fef9c3"/>
+    <rect x="22" y="40" width="40" height="6" fill="#854d0e"/>
+
+    <!-- Shadow crescent on right -->
+    <path d="M40 50 C48 50 60 42 60 24 C60 36 52 48 40 50 Z" fill="#713f12" opacity="0.8"/>
+
+    <!-- Highlight Rim on Top Left -->
+    <path d="M28 22 C26 26 25 30 25 30 C25 20 32 14 40 14 C40 14 32 16 28 22 Z" fill="#ffffff" opacity="0.7"/>
+  </g>
+
+  <!-- Outline Sphere -->
+  <circle cx="42" cy="32" r="18" fill="none" stroke="#a16207" stroke-width="1.2"/>
+
+  <!-- 3. FRONT RINGS (in front of sphere) -->
+  <g clip-path="url(#saturn-front-clip)" transform="rotate(-18 42 32)">
+    <ellipse cx="42" cy="32" rx="39" ry="12" fill="none" stroke="#facc15" stroke-width="4.5"/>
+    <ellipse cx="42" cy="32" rx="40" ry="13" fill="none" stroke="#fef08a" stroke-width="1.8"/>
+    <ellipse cx="42" cy="32" rx="33" ry="9" fill="none" stroke="#a16207" stroke-width="2"/>
+  </g>
+</svg>
