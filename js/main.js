@@ -1,6 +1,6 @@
 /**
- * Vintage CRT Terminal Logic (Model 8086)
- * Handles retro phosphor switching, scanlines, data binding, and terminal UI.
+ * Vintage 1980s Broadcast & Resume Application Logic
+ * Renders data cleanly, handles 80s TV channel switching, and interactive widgets.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,29 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects("all");
   renderEducation();
   renderContact();
-  setupCrtControls();
+  setupTvChannels();
   setupNavigation();
   setupScrollAnimations();
 });
 
 // ===================================================================
-// HERO & IDENT RENDERING
+// HERO RENDERING
 // ===================================================================
 function renderHero() {
   const p = resumeData.personal;
   if (!p) return;
-
-  const titleEl = document.getElementById("hero-title");
-  if (titleEl) titleEl.textContent = p.name.toUpperCase();
-
-  const roleEl = document.getElementById("hero-role");
-  if (roleEl) roleEl.textContent = p.role.toUpperCase();
-
-  const taglineEl = document.getElementById("hero-tagline");
-  if (taglineEl) taglineEl.textContent = p.tagline;
-
-  const locEl = document.getElementById("hero-location");
-  if (locEl) locEl.textContent = p.location;
 
   // PDF Resume link
   const resumeBtn = document.getElementById("resume-download-btn");
@@ -41,44 +29,19 @@ function renderHero() {
     if (p.resumePdfUrl === "#") {
       resumeBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        showToast(">> [WARN]: Place resume.pdf in /assets/ & configure data.js");
+        showToast("📄 Add resume.pdf to assets/ and update js/data.js");
       });
     }
   }
 
-  // Teletype Code Box
-  const codeSnippet = document.getElementById("code-snippet");
-  if (codeSnippet) {
-    codeSnippet.textContent = `// SYSTEM_STRUCT: OPERATOR_CONFIG
-struct SystemOperator {
-    char name[]      = "${p.name}";
-    char location[]  = "${p.location}";
-    char disciplines = ["AI_AGENTS", "ROBOTICS", "3D_CAD"];
-    char education[] = "BYU-IDAHO // BUSINESS_ANALYTICS";
-    char certs[]     = "SOLIDWORKS_CSWA // CERTIFIED";
-    
-    void executeMission() {
-        optimizeStorageSystems();
-        deployMultiAgentWorkflows();
-        fabricatePrototypes();
-    }
-};
-// BOOT RECORD VERIFIED: CHECKSUM 0x8086_OK`;
-  }
-
-  // Retro Stats Grid
-  const statsContainer = document.getElementById("stats-grid");
-  if (statsContainer && p.stats) {
-    statsContainer.innerHTML = p.stats
-      .map(
-        (s) => `
-      <div class="stat-item">
-        <span class="stat-value">${s.value}</span>
-        <span class="stat-label">${s.label}</span>
-      </div>
-    `
-      )
-      .join("");
+  // Copy Email Button in Hero
+  const copyBtn = document.getElementById("copy-email-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(p.email).then(() => {
+        showToast(`Copied ${p.email} to clipboard!`);
+      });
+    });
   }
 }
 
@@ -89,15 +52,16 @@ function renderSkills() {
   const s = resumeData.skills;
   if (!s) return;
 
-  // Render Core Pillars
+  // Render 4 Pillars
   const strengthsContainer = document.getElementById("strengths-grid");
   if (strengthsContainer && s.coreStrengths) {
     strengthsContainer.innerHTML = s.coreStrengths
       .map(
         (str, idx) => `
-      <div class="retro-strength-card">
-        <h3 class="strength-title">0${idx + 1}. ${str.title.toUpperCase()}</h3>
-        <p class="strength-desc">${str.desc}</p>
+      <div class="pillar-card">
+        <div class="pillar-num">PILLAR 0${idx + 1}</div>
+        <h3 class="pillar-title">${str.title}</h3>
+        <p class="pillar-desc">${str.desc}</p>
       </div>
     `
       )
@@ -110,19 +74,19 @@ function renderSkills() {
     catContainer.innerHTML = s.categories
       .map(
         (cat) => `
-      <div class="retro-cat-card">
-        <h3 class="retro-cat-title">&gt;&gt; ${cat.name.toUpperCase()}</h3>
+      <div class="skill-cat-card">
+        <h3 class="skill-cat-title">${cat.name}</h3>
         <div class="skill-list">
           ${cat.items
             .map(
               (item) => `
-            <div class="retro-skill-item">
+            <div class="skill-item">
               <div class="skill-info">
                 <span class="skill-name">${item.name}</span>
-                <span class="skill-pct">[${item.level}%]</span>
+                <span class="skill-pct">${item.level}%</span>
               </div>
-              <div class="retro-progress-track">
-                <div class="skill-bar-fill" data-width="${item.level}%"></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="${item.level}%"></div>
               </div>
             </div>
           `
@@ -137,7 +101,7 @@ function renderSkills() {
 }
 
 // ===================================================================
-// EXPERIENCE & LOGS RENDERING
+// EXPERIENCE RENDERING
 // ===================================================================
 function renderExperience() {
   const container = document.getElementById("experience-timeline");
@@ -145,22 +109,19 @@ function renderExperience() {
 
   container.innerHTML = resumeData.experience
     .map(
-      (job, idx) => `
-    <div class="retro-log-card">
-      <div class="retro-log-header">
-        <span>LOG_RECORD_#0${idx + 1} // ${job.type.toUpperCase()}</span>
-        <span>PERIOD: [${job.period}]</span>
+      (job) => `
+    <div class="exp-card">
+      <div class="exp-header">
+        <h3 class="exp-role">${job.role}</h3>
+        <span class="exp-period-badge">${job.period}</span>
       </div>
-      <div class="retro-log-body">
-        <h3 class="retro-log-role">${job.role.toUpperCase()}</h3>
-        <div class="retro-log-comp">&gt; COMPANY: ${job.company.toUpperCase()} // LOC: ${job.location.toUpperCase()}</div>
-        <p class="retro-log-desc">${job.description}</p>
-        <ul class="retro-bullet-list">
-          ${job.achievements.map((a) => `<li class="retro-bullet">${a}</li>`).join("")}
-        </ul>
-        <div class="retro-tags-bar">
-          ${job.technologies.map((t) => `<span class="retro-tag">[${t}]</span>`).join("")}
-        </div>
+      <div class="exp-company">${job.company} • ${job.location}</div>
+      <p class="exp-desc">${job.description}</p>
+      <ul class="exp-bullets">
+        ${job.achievements.map((a) => `<li class="exp-bullet">${a}</li>`).join("")}
+      </ul>
+      <div class="exp-tags">
+        ${job.technologies.map((t) => `<span class="tech-tag">${t}</span>`).join("")}
       </div>
     </div>
   `
@@ -186,32 +147,31 @@ function renderProjects(filter = "all") {
 
   container.innerHTML = filtered
     .map(
-      (proj, idx) => `
-    <div class="retro-proj-card">
-      <div class="proj-headbar">
-        <span>ARCHIVE_FILE_#0${idx + 1}</span>
-        <span class="proj-badge">${proj.category.toUpperCase()}</span>
+      (proj) => `
+    <div class="proj-card">
+      <span class="proj-cat-badge">${proj.category}</span>
+      <h3 class="proj-title">${proj.title}</h3>
+      <div class="proj-tagline">${proj.tagline}</div>
+      <p class="proj-desc">${proj.description}</p>
+      
+      ${proj.metrics ? `<div class="proj-metrics">⚡ ${proj.metrics}</div>` : ""}
+
+      <div class="exp-tags" style="margin-bottom: 1rem;">
+        ${proj.tech.map((t) => `<span class="tech-tag">${t}</span>`).join("")}
       </div>
-      <div class="proj-content">
-        <h3 class="proj-title">${proj.title.toUpperCase()}</h3>
-        <div class="proj-tagline">&gt;&gt; ${proj.tagline}</div>
-        <p class="proj-desc">${proj.description}</p>
-        
-        ${proj.metrics ? `<div class="proj-metric-box"><span>[TELEMETRY]</span> ${proj.metrics}</div>` : ""}
 
-        <div class="retro-tags-bar" style="margin-bottom: 1rem;">
-          ${proj.tech.map((t) => `<span class="retro-tag">${t}</span>`).join("")}
-        </div>
-
-        <div class="proj-links-bar">
+      <div class="proj-footer">
+        <div>
           ${
             proj.githubUrl
-              ? `<a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="proj-link">[ SOURCE_REPO ]</a>`
+              ? `<a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="proj-link-text">View Source Code →</a>`
               : ""
           }
+        </div>
+        <div>
           ${
             proj.liveUrl
-              ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="proj-link">[ LIVE_SIGNAL ]</a>`
+              ? `<a href="${proj.liveUrl}" target="_blank" rel="noopener noreferrer" class="proj-link-text">Live Demo ↗</a>`
               : ""
           }
         </div>
@@ -221,8 +181,8 @@ function renderProjects(filter = "all") {
     )
     .join("");
 
-  // Setup Filter buttons
-  const filterBtns = document.querySelectorAll(".retro-filter-btn");
+  // Setup Filter button click listeners
+  const filterBtns = document.querySelectorAll(".filter-pill");
   filterBtns.forEach((btn) => {
     btn.onclick = () => {
       filterBtns.forEach((b) => b.classList.remove("active"));
@@ -243,11 +203,11 @@ function renderEducation() {
       .map(
         (edu) => `
       <div class="edu-box">
-        <h3 class="edu-degree">${edu.degree.toUpperCase()}</h3>
-        <div class="edu-school">${edu.institution.toUpperCase()}</div>
-        <div class="edu-meta">&gt; REGISTRY: ${edu.period.toUpperCase()} // ${edu.location.toUpperCase()}</div>
-        <ul class="retro-bullet-list">
-          ${edu.highlights.map((h) => `<li class="retro-bullet">${h}</li>`).join("")}
+        <h3 class="edu-degree">${edu.degree}</h3>
+        <div class="edu-school">${edu.institution}</div>
+        <div class="edu-meta">${edu.period} • ${edu.location}</div>
+        <ul class="exp-bullets">
+          ${edu.highlights.map((h) => `<li class="exp-bullet">${h}</li>`).join("")}
         </ul>
       </div>
     `
@@ -259,14 +219,14 @@ function renderEducation() {
   if (certContainer && resumeData.certifications) {
     certContainer.innerHTML = `
       <div class="edu-box">
-        <h3 class="edu-degree" style="font-size: 1.6rem;">HARDWARE & AI ACCREDITATION</h3>
+        <h3 class="edu-degree" style="font-size: 1.35rem; margin-bottom: 1.2rem;">Verified Accreditations</h3>
         <div>
           ${resumeData.certifications
             .map(
               (c) => `
-            <div class="cert-entry">
-              <div class="cert-name">&gt; ${c.name}</div>
-              <div class="cert-issuer">ISSUER: ${c.issuer} // STATUS: ${c.year}</div>
+            <div class="cert-card-item">
+              <div class="cert-name">${c.name}</div>
+              <div class="cert-issuer">${c.issuer} • ${c.year}</div>
             </div>
           `
             )
@@ -278,17 +238,17 @@ function renderEducation() {
 }
 
 // ===================================================================
-// CONTACT / COMMS RENDERING
+// CONTACT SECTION RENDERING
 // ===================================================================
 function renderContact() {
   const p = resumeData.personal;
   if (!p) return;
 
-  const emailBtn = document.getElementById("copy-email-btn");
-  if (emailBtn) {
-    emailBtn.addEventListener("click", () => {
+  const copyFooterBtn = document.getElementById("copy-email-btn-footer");
+  if (copyFooterBtn) {
+    copyFooterBtn.addEventListener("click", () => {
       navigator.clipboard.writeText(p.email).then(() => {
-        showToast(`>> COPIED: [${p.email}] TO BUFFER`);
+        showToast(`Copied ${p.email} to clipboard!`);
       });
     });
   }
@@ -296,7 +256,7 @@ function renderContact() {
   const emailMailto = document.getElementById("mailto-link");
   if (emailMailto) {
     emailMailto.href = `mailto:${p.email}`;
-    emailMailto.textContent = `[ TRANSMIT PACKET TO: ${p.email} ]`;
+    emailMailto.textContent = `Send an Email (${p.email})`;
   }
 
   const githubLink = document.getElementById("contact-github");
@@ -310,37 +270,54 @@ function renderContact() {
 }
 
 // ===================================================================
-// VINTAGE CRT CONTROLS (PHOSPHOR CYCLER & SCANLINE TOGGLE)
+// 80s TV CHANNEL SELECTOR & CONTROLS
 // ===================================================================
-function setupCrtControls() {
-  const phosphorBtn = document.getElementById("toggle-phosphor");
-  const modes = [
-    { class: "crt-theme-amber", label: "AMBER" },
-    { class: "crt-theme-green", label: "GREEN" },
-    { class: "crt-theme-white", label: "WHITE" }
-  ];
-  let currentIdx = 0;
+function setupTvChannels() {
+  const channelBtns = document.querySelectorAll(".channel-btn[data-channel]");
+  const bgIframe = document.getElementById("bg-video-frame");
+  const pipIframe = document.getElementById("pip-video-frame");
+  const channelLabel = document.getElementById("current-channel-name");
+  const tvBadge = document.getElementById("screen-ch-badge");
 
-  if (phosphorBtn) {
-    phosphorBtn.addEventListener("click", () => {
-      document.body.classList.remove(modes[currentIdx].class);
-      currentIdx = (currentIdx + 1) % modes.length;
-      document.body.classList.add(modes[currentIdx].class);
-      phosphorBtn.textContent = modes[currentIdx].label;
-      showToast(`>> PHOSPHOR SET TO: ${modes[currentIdx].label}`);
+  const channelNames = {
+    commercials: "CH 03: 80s Commercials",
+    sports: "CH 04: 80s Sports Highlights",
+    tech: "CH 08: 80s Tech & Computing"
+  };
+
+  channelBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      channelBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const channelKey = btn.getAttribute("data-channel");
+      const videoId = btn.getAttribute("data-video");
+      const newSrc = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1`;
+
+      if (bgIframe) bgIframe.src = newSrc;
+      if (pipIframe) pipIframe.src = newSrc;
+
+      if (channelLabel && channelNames[channelKey]) {
+        channelLabel.textContent = channelNames[channelKey];
+      }
+
+      if (tvBadge) {
+        tvBadge.textContent = `${btn.textContent.trim().split("•")[0]} • LIVE`;
+      }
+
+      showToast(`📺 Switched to ${channelNames[channelKey] || "New Channel"}`);
     });
-  }
+  });
 
-  const scanlineBtn = document.getElementById("toggle-scanlines");
-  const scanlinesLayer = document.getElementById("scanlines-layer");
-
-  if (scanlineBtn && scanlinesLayer) {
-    scanlineBtn.addEventListener("click", () => {
-      scanlinesLayer.classList.toggle("hidden");
-      const isOn = !scanlinesLayer.classList.contains("hidden");
-      scanlineBtn.textContent = isOn ? "ON" : "OFF";
-      scanlineBtn.classList.toggle("active", isOn);
-      showToast(`>> CRT SCANLINES: ${isOn ? "ENABLED" : "DISABLED"}`);
+  // Toggle Background Video Button
+  const toggleBgBtn = document.getElementById("toggle-video-bg");
+  const backdrop = document.getElementById("video-backdrop");
+  if (toggleBgBtn && backdrop) {
+    toggleBgBtn.addEventListener("click", () => {
+      backdrop.classList.toggle("hidden-bg");
+      const isHidden = backdrop.classList.contains("hidden-bg");
+      toggleBgBtn.textContent = isHidden ? "OFF" : "ON";
+      showToast(`Background video ${isHidden ? "hidden" : "enabled"}`);
     });
   }
 }
@@ -349,13 +326,13 @@ function setupCrtControls() {
 // NAVIGATION & ANIMATIONS
 // ===================================================================
 function setupNavigation() {
-  const navLinks = document.querySelectorAll(".retro-nav-link");
+  const navLinks = document.querySelectorAll(".nav-item");
   const sections = document.querySelectorAll("section");
 
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach((sec) => {
-      const top = sec.offsetTop - 140;
+      const top = sec.offsetTop - 150;
       if (window.scrollY >= top) {
         current = sec.getAttribute("id");
       }
@@ -375,7 +352,7 @@ function setupScrollAnimations() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const bars = entry.target.querySelectorAll(".skill-bar-fill");
+          const bars = entry.target.querySelectorAll(".skill-fill");
           bars.forEach((bar) => {
             const width = bar.getAttribute("data-width");
             bar.style.width = width;
@@ -395,7 +372,7 @@ function showToast(message) {
   if (!toast) {
     toast = document.createElement("div");
     toast.id = "toast";
-    toast.className = "retro-toast";
+    toast.className = "vintage-toast";
     document.body.appendChild(toast);
   }
   toast.textContent = message;

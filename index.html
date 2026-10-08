@@ -3,267 +3,300 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collin Webb // AMBER CRT TERMINAL // AI & Robotics Engineer</title>
-  <meta name="description" content="Vintage CRT Terminal Portfolio of Collin Webb - AI & Robotics Systems Engineer. Influenced by early computing, ARPANET, and amber phosphor displays.">
-  <meta name="keywords" content="Collin Webb, AI Engineer, Robotics, SolidWorks, CAD, Vintage Computing, CRT Terminal">
+  <title>Collin Webb | AI & Robotics Systems Engineer</title>
+  <meta name="description" content="Portfolio & Resume of Collin Webb - AI & Robotics Systems Engineer, featuring an authentic 1980s vintage broadcast aesthetic with retro commercials, sports highlights, and warm amber CRT visuals.">
   
-  <!-- Retro Computing Fonts -->
+  <!-- Vintage & Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   
-  <!-- Main Vintage Stylesheet -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="crt-theme-amber">
+<body class="vintage-amber-theme">
 
-  <!-- VINTAGE CRT MONITOR BEZEL & CHASSIS -->
-  <div class="crt-monitor-frame">
+  <!-- =============================================================
+       AMBIENT 80s VINTAGE VIDEO BACKDROP (CRT BROADCAST)
+       ============================================================= -->
+  <div class="vintage-video-backdrop" id="video-backdrop">
+    <div class="video-overlay-tint"></div>
+    <div class="crt-scanline-raster"></div>
+    <div class="vhs-grain"></div>
+    <iframe 
+      id="bg-video-frame"
+      src="https://www.youtube-nocookie.com/embed/g_0F-fFjG3I?autoplay=1&mute=1&loop=1&playlist=g_0F-fFjG3I&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1"
+      title="Vintage 80s Broadcast"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- VINTAGE CHASSIS FRAME -->
+  <div class="vintage-console-wrapper">
     
-    <!-- Top Monitor Header Plate -->
-    <div class="monitor-header-plate">
-      <div class="monitor-brand">
-        <span class="brand-logo">◈</span>
-        <span class="brand-name">WEBBTRONIC</span>
-        <span class="brand-model">MODEL 8086-CRT // AMBER PHOSPHOR DISPLAY</span>
+    <!-- TOP MONITOR HEADER / BROADCAST BAR -->
+    <header class="broadcast-header">
+      <div class="header-left">
+        <span class="vintage-badge">◈ RETRO BROADCAST SYSTEM</span>
+        <span class="v-channel-label">TUNED TO: <strong id="current-channel-name">CH 03: 80s Commercials</strong></span>
       </div>
-      <div class="monitor-controls">
-        <div class="crt-switches">
-          <label class="switch-label">PHOSPHOR:</label>
-          <button id="toggle-phosphor" class="retro-knob-btn" title="Cycle Amber / Green / White Phosphor">AMBER</button>
+
+      <!-- VINTAGE CHANNEL SELECTOR & TV CONTROLS -->
+      <div class="tv-controls">
+        <div class="channel-knob-group">
+          <span class="knob-label">CHANNEL:</span>
+          <button class="channel-btn active" data-channel="commercials" data-video="g_0F-fFjG3I" title="Classic 1980s Commercials">
+            CH 03 • 80s Ads
+          </button>
+          <button class="channel-btn" data-channel="sports" data-video="fQ88v8h1o5w" title="1980s Iconic Sports & Basketball Highlights">
+            CH 04 • 80s Sports
+          </button>
+          <button class="channel-btn" data-channel="tech" data-video="e_40c_vM3zQ" title="Early Computing & 80s Tech Commercials">
+            CH 08 • 80s Tech
+          </button>
+        </div>
+
+        <div class="video-opacity-control">
+          <span class="knob-label">VIDEO:</span>
+          <button id="toggle-video-bg" class="channel-btn" title="Toggle background video visibility">ON</button>
+        </div>
+
+        <div class="power-status">
+          <span class="vintage-power-led"></span>
+          <span class="power-label">ON AIR</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="vintage-navbar">
+      <a href="#" class="brand-signature">
+        <span class="brand-monogram">CW</span>
+        <span class="brand-text">Collin Webb</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-item active">About</a></li>
+        <li><a href="#skills" class="nav-item">Skills & Strengths</a></li>
+        <li><a href="#experience" class="nav-item">Experience</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#education" class="nav-item">Education</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+
+      <div class="nav-quick-cta">
+        <a href="#contact" class="btn-vintage-primary">Get In Touch</a>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="vintage-main">
+      
+      <!-- HERO / INTRO SECTION -->
+      <section id="about" class="vintage-section hero-section">
+        <div class="hero-split">
           
-          <label class="switch-label" style="margin-left: 0.6rem;">SCANLINES:</label>
-          <button id="toggle-scanlines" class="retro-knob-btn active" title="Toggle CRT Scanline Overlay">ON</button>
-        </div>
-        <div class="power-indicator">
-          <span class="power-led"></span>
-          <span class="power-text">PWR</span>
-        </div>
-      </div>
-    </div>
+          <!-- Text Info -->
+          <div class="hero-text-content">
+            <div class="issue-tag">
+              <span>EDITION: 1980s VINTAGE</span>
+              <span class="dot-sep">•</span>
+              <span>REXBURG, IDAHO</span>
+              <span class="dot-sep">•</span>
+              <span class="avail-tag">OPEN TO OPPORTUNITIES</span>
+            </div>
 
-    <!-- CRT SCREEN GLASS AREA -->
-    <div class="crt-screen" id="crt-screen">
-      <!-- CRT Raster Scanlines & Vignette Glow -->
-      <div class="crt-scanlines" id="scanlines-layer"></div>
-      <div class="crt-vignette"></div>
-      <div class="crt-flicker"></div>
+            <h1 class="hero-title">
+              Collin <span class="amber-glow">Webb</span>
+            </h1>
 
-      <!-- INSIDE CRT CONTENT -->
-      <div class="crt-content-inner">
-        
-        <!-- SYSTEM BOOT BANNER / TELETYPE HEADER -->
-        <header class="terminal-topbar">
-          <div class="bios-line">
-            <span>WEBBTRONIC BIOS v2.4 (C) 1983-1994 // ARPANET NODE #007</span>
-            <span class="tele-status">STATUS: ONLINE [BAUD 14400]</span>
+            <p class="hero-lead-role">
+              AI & Robotics Systems Engineer
+            </p>
+
+            <p class="hero-paragraph">
+              Bridging autonomous AI agents, robotics automation, and physical CAD engineering to build intelligent real-world systems. Specializing in high-throughput warehouse automation, customer service AI agents, and rapid electromechanical prototyping.
+            </p>
+
+            <div class="hero-quick-specs">
+              <div class="spec-card">
+                <span class="spec-label">Location</span>
+                <span class="spec-value">Rexburg, ID (Remote / Relocation)</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-label">Education</span>
+                <span class="spec-value">BYU-Idaho • Business Analytics</span>
+              </div>
+              <div class="spec-card">
+                <span class="spec-label">Certification</span>
+                <span class="spec-value">SolidWorks CSWA • Mechanical CAD</span>
+              </div>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn-vintage-primary">View Featured Projects</a>
+              <a id="resume-download-btn" href="#" class="btn-vintage-secondary">Download Resume (PDF)</a>
+              <button id="copy-email-btn" class="btn-vintage-outline">Copy Email Address</button>
+            </div>
           </div>
 
-          <!-- ASCII ART BANNER -->
-          <pre class="ascii-banner" aria-label="Collin Webb ASCII Art">
-  ██████╗ ██████╗ ██╗     ██╗     ██╗███╗   ██╗    ██╗    ██╗███████╗██████╗ ██████╗ 
- ██╔════╝██╔═══██╗██║     ██║     ██║████╗  ██║    ██║    ██║██╔════╝██╔══██╗██╔══██╗
- ██║     ██║   ██║██║     ██║     ██║██╔██╗ ██║    ██║ █╗ ██║█████╗  ██████╔╝██████╔╝
- ██║     ██║   ██║██║     ██║     ██║██║╚██╗██║    ██║███╗██║██╔══╝  ██╔══██╗██╔══██╗
- ╚██████╗╚██████╔╝███████╗███████╗██║██║ ╚████║    ╚███╔███╔╝███████╗██████╔╝██████╔╝
-  ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝     ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═════╝ 
-          </pre>
+          <!-- Vintage TV Screen Visual (Picture in Picture) -->
+          <div class="hero-tv-monitor">
+            <div class="mini-crt-casing">
+              <div class="mini-crt-screen">
+                <div class="mini-crt-scanlines"></div>
+                <div class="mini-crt-vignette"></div>
+                <div class="tv-channel-badge" id="screen-ch-badge">CH 03 • LIVE</div>
+                
+                <iframe 
+                  id="pip-video-frame"
+                  src="https://www.youtube-nocookie.com/embed/g_0F-fFjG3I?autoplay=1&mute=1&loop=1&playlist=g_0F-fFjG3I&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1"
+                  title="Vintage 80s Broadcast Screen"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="mini-crt-controls-bar">
+                <span class="woodgrain-logo">WEBBTRONIC SOLID STATE</span>
+                <div class="dials">
+                  <span class="dial-knob" title="VHF">⨁</span>
+                  <span class="dial-knob" title="UHF">⨁</span>
+                </div>
+              </div>
+            </div>
 
-          <div class="sys-summary-bar">
-            <span>&gt;&gt; HOST: REXBURG.ID.NODE // BUS: ANALYTICS + ROBOTICS + CAD + AI_AGENTS // MEM: 640K OK</span>
+            <!-- Stats Bar Below TV -->
+            <div class="hero-stats-row" id="stats-grid">
+              <div class="stat-box">
+                <span class="stat-num">AI Agents</span>
+                <span class="stat-name">Multi-Agent RAG</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">Robotics</span>
+                <span class="stat-name">Warehouse Automation</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">SolidWorks</span>
+                <span class="stat-name">CSWA Certified</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">Analytics</span>
+                <span class="stat-name">BYU-Idaho B.S.</span>
+              </div>
+            </div>
           </div>
 
-          <!-- RETRO BBS / CLI NAVIGATION MENU -->
-          <nav class="retro-nav">
-            <span class="nav-prompt">&gt; SELECT_OPTION:</span>
-            <ul class="retro-nav-list">
-              <li><a href="#about" class="retro-nav-link active">[01_SYS_IDENT]</a></li>
-              <li><a href="#skills" class="retro-nav-link">[02_SUBSYSTEMS]</a></li>
-              <li><a href="#experience" class="retro-nav-link">[03_MISSION_LOGS]</a></li>
-              <li><a href="#projects" class="retro-nav-link">[04_ARCHIVES]</a></li>
-              <li><a href="#education" class="retro-nav-link">[05_CREDENTIALS]</a></li>
-              <li><a href="#contact" class="retro-nav-link">[06_COMMS_LINK]</a></li>
-            </ul>
-          </nav>
-        </header>
+        </div>
+      </section>
 
-        <main>
-          <!-- HERO / IDENTITY SECTION -->
-          <section id="about" class="retro-section">
-            <div class="retro-card-box">
-              <div class="retro-card-titlebar">
-                <span>FILE: /USR/BIN/IDENT_COLLIN_WEBB.DAT</span>
-                <span class="badge-status">● ACTIVE_OPERATOR</span>
-              </div>
-              <div class="retro-card-body">
-                <div class="ident-grid">
-                  <div class="ident-text">
-                    <p class="cli-prompt-line">
-                      <span class="cli-user">root@webbtronic:~$</span> <span class="cli-command">cat identity.txt</span>
-                    </p>
-                    <h1 class="hero-name" id="hero-title">COLLIN WEBB</h1>
-                    <div class="hero-subtitle-tag" id="hero-role">AI & ROBOTICS SYSTEMS ENGINEER</div>
-
-                    <p class="retro-bio-lead" id="hero-tagline">
-                      Bridging autonomous AI agents, robotics software, and physical engineering to build intelligent real-world systems.
-                    </p>
-
-                    <div class="spec-matrix">
-                      <div class="spec-row">
-                        <span class="spec-key">[LOCATION]:</span>
-                        <span class="spec-val" id="hero-location">Rexburg, ID (Open to Remote & Relocation)</span>
-                      </div>
-                      <div class="spec-row">
-                        <span class="spec-key">[CONTACT]:</span>
-                        <span class="spec-val">collinwebb007@gmail.com</span>
-                      </div>
-                      <div class="spec-row">
-                        <span class="spec-key">[DISCIPLINES]:</span>
-                        <span class="spec-val">AI Multi-Agent Workflows • Robotics Controls • SolidWorks 3D CAD</span>
-                      </div>
-                    </div>
-
-                    <div class="retro-actions">
-                      <a href="#projects" class="retro-btn">[ EXECUTE: VIEW_PROJECTS ]</a>
-                      <a id="resume-download-btn" href="#" class="retro-btn">[ DUMP: RESUME.PDF ]</a>
-                      <button id="copy-email-btn" class="retro-btn">[ CLIPBOARD: COPY_EMAIL ]</button>
-                    </div>
-                  </div>
-
-                  <!-- RETRO TELETYPE / CODE CONSOLE -->
-                  <div class="retro-code-box">
-                    <div class="retro-code-header">
-                      <span>CONSOLE: MEMORY_MAP.SYS</span>
-                      <span class="blink-cursor">█</span>
-                    </div>
-                    <pre class="retro-code-text"><code id="code-snippet"></code></pre>
-                  </div>
-                </div>
-
-                <!-- QUICK STATS ASCII BAR -->
-                <div class="retro-stats-box" id="stats-grid"></div>
-              </div>
-            </div>
-          </section>
-
-          <!-- SKILLS & STRENGTHS SECTION -->
-          <section id="skills" class="retro-section">
-            <div class="retro-section-head">
-              <span class="head-code">&gt;&gt; SUB-SYSTEM MATRIX 02</span>
-              <h2>TECHNICAL COMPETENCIES & HARDWARE REGISTERS</h2>
-            </div>
-
-            <!-- Core Pillars -->
-            <div class="retro-strengths-grid" id="strengths-grid"></div>
-
-            <!-- Category Meters -->
-            <div class="retro-skills-grid" id="skills-categories-grid"></div>
-          </section>
-
-          <!-- WORK EXPERIENCE / MISSION LOGS -->
-          <section id="experience" class="retro-section">
-            <div class="retro-section-head">
-              <span class="head-code">&gt;&gt; MISSION ARCHIVE 03</span>
-              <h2>CAREER OPERATIONS & INDUSTRIAL AUTOMATION LOGS</h2>
-            </div>
-
-            <div class="retro-timeline" id="experience-timeline"></div>
-          </section>
-
-          <!-- FEATURED PROJECTS -->
-          <section id="projects" class="retro-section">
-            <div class="retro-section-head">
-              <span class="head-code">&gt;&gt; STORAGE ARCHIVES 04</span>
-              <h2>SHIPPED HARDWARE & SOFTWARE PROJECTS</h2>
-            </div>
-
-            <!-- Filter tabs -->
-            <div class="retro-filter-bar">
-              <span class="filter-prompt">&gt; FILTER_RECORDS:</span>
-              <button class="retro-filter-btn active" data-filter="all">[ ALL_RECORDS ]</button>
-              <button class="retro-filter-btn" data-filter="aiagents">[ AI_AGENTS ]</button>
-              <button class="retro-filter-btn" data-filter="robotics">[ ROBOTICS ]</button>
-              <button class="retro-filter-btn" data-filter="caddesign">[ CAD_HARDWARE ]</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="retro-projects-grid" id="projects-grid"></div>
-          </section>
-
-          <!-- EDUCATION & CREDENTIALS -->
-          <section id="education" class="retro-section">
-            <div class="retro-section-head">
-              <span class="head-code">&gt;&gt; VERIFIED CREDENTIALS 05</span>
-              <h2>ACADEMIC FOUNDATION & SOLIDWORKS CERTIFICATIONS</h2>
-            </div>
-
-            <div class="retro-edu-grid">
-              <div id="education-content"></div>
-              <div id="certs-content"></div>
-            </div>
-          </section>
-
-          <!-- CONTACT / COMMS -->
-          <section id="contact" class="retro-section">
-            <div class="retro-card-box">
-              <div class="retro-card-titlebar">
-                <span>COMMUNICATION TERMINAL // PACKET TRANSMISSION</span>
-                <span>[PORT 25 / 443]</span>
-              </div>
-              <div class="retro-card-body text-center">
-                <h2 class="retro-comms-title">ESTABLISH COMMS WITH COLLIN WEBB</h2>
-                <p class="retro-comms-desc">
-                  Open to high-impact roles in AI Agents, Robotics Engineering, Warehouse Automation, and CAD Product Prototyping.
-                </p>
-
-                <div class="retro-actions justify-center">
-                  <a id="mailto-link" href="mailto:collinwebb007@gmail.com" class="retro-btn-large">
-                    [ TRANSMIT MESSAGE TO: collinwebb007@gmail.com ]
-                  </a>
-                </div>
-
-                <div class="retro-social-links">
-                  <a id="contact-github" href="https://github.com/collinwebb007" target="_blank" rel="noopener noreferrer" class="retro-link">
-                    [ GITHUB: collinwebb007 ]
-                  </a>
-                  <a id="contact-linkedin" href="https://www.linkedin.com/in/collinwebb/" target="_blank" rel="noopener noreferrer" class="retro-link">
-                    [ LINKEDIN: /in/collinwebb ]
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <!-- RETRO FOOTER -->
-        <footer class="retro-footer">
-          <div class="footer-divider">+-----------------------------------------------------------------------------------+</div>
-          <p class="footer-text">
-            © <span id="footer-year">2026</span> COLLIN WEBB // REXBURG, ID NODE // TELETYPE LINK ESTABLISHED // NO COOKIES • NO BLOAT • PURE CRT
+      <!-- SKILLS & STRENGTHS SECTION -->
+      <section id="skills" class="vintage-section">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Core Competencies</span>
+          <h2 class="section-heading">Technical Skills & Strengths</h2>
+          <p class="section-subheading">
+            A balanced foundation uniting autonomous software intelligence, physical robotics, and data-driven business modeling.
           </p>
-        </footer>
+        </div>
 
-      </div> <!-- /crt-content-inner -->
-    </div> <!-- /crt-screen -->
-    
-    <!-- Bottom Monitor Bezel with Grille and Screws -->
-    <div class="monitor-footer-plate">
-      <div class="speaker-grille">
-        <span>||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</span>
-      </div>
-      <div class="chassis-badges">
-        <span>SOLID STATE DISPLAY</span>
-        <span class="screw-head">⨁</span>
-        <span>FCC ID: CW-8086</span>
-        <span class="screw-head">⨁</span>
-        <span>AMBER 60HZ</span>
-      </div>
-    </div>
+        <!-- 4 Core Pillars -->
+        <div class="pillars-grid" id="strengths-grid"></div>
 
-  </div> <!-- /crt-monitor-frame -->
+        <!-- Technical Categories & Meters -->
+        <div class="skills-category-grid" id="skills-categories-grid"></div>
+      </section>
 
-  <!-- Toast Notification element -->
-  <div id="toast" class="retro-toast"></div>
+      <!-- WORK EXPERIENCE SECTION -->
+      <section id="experience" class="vintage-section">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Career History</span>
+          <h2 class="section-heading">Work Experience & Achievements</h2>
+          <p class="section-subheading">
+            Demonstrated track record of delivering measurable outcomes in warehouse automation and generative AI.
+          </p>
+        </div>
+
+        <div class="experience-timeline" id="experience-timeline"></div>
+      </section>
+
+      <!-- FEATURED PROJECTS SECTION -->
+      <section id="projects" class="vintage-section">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Portfolio</span>
+          <h2 class="section-heading">Featured Projects</h2>
+          <p class="section-subheading">
+            Physical hardware prototypes, robotics systems, and autonomous agent workflows.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-tab-bar">
+          <button class="filter-pill active" data-filter="all">All Projects</button>
+          <button class="filter-pill" data-filter="aiagents">AI Agents & LLMs</button>
+          <button class="filter-pill" data-filter="robotics">Robotics & Controls</button>
+          <button class="filter-pill" data-filter="caddesign">CAD & Hardware</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-display-grid" id="projects-grid"></div>
+      </section>
+
+      <!-- EDUCATION & CERTIFICATIONS -->
+      <section id="education" class="vintage-section">
+        <div class="section-title-wrap">
+          <span class="section-kicker">Academic Foundation</span>
+          <h2 class="section-heading">Education & Certifications</h2>
+        </div>
+
+        <div class="education-grid">
+          <div id="education-content"></div>
+          <div id="certs-content"></div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="vintage-section contact-section">
+        <div class="contact-card">
+          <span class="section-kicker">Get In Touch</span>
+          <h2 class="contact-card-title">Let's Build Something Exceptional</h2>
+          <p class="contact-card-desc">
+            Whether you are looking to hire for an AI, robotics, or automation engineering role, or want to collaborate on innovative technology, I would love to connect.
+          </p>
+
+          <div class="contact-btn-group">
+            <a id="mailto-link" href="mailto:collinwebb007@gmail.com" class="btn-vintage-primary btn-large">
+              Send an Email (collinwebb007@gmail.com)
+            </a>
+            <button id="copy-email-btn-footer" class="btn-vintage-secondary btn-large">
+              Copy Email Address
+            </button>
+          </div>
+
+          <div class="social-links-row">
+            <a id="contact-github" href="https://github.com/collinwebb007" target="_blank" rel="noopener noreferrer" class="social-pill">
+              GitHub: /collinwebb007
+            </a>
+            <a id="contact-linkedin" href="https://www.linkedin.com/in/collinwebb/" target="_blank" rel="noopener noreferrer" class="social-pill">
+              LinkedIn: /in/collinwebb
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="vintage-footer">
+      <p>© <span id="footer-year">2026</span> Collin Webb • Rexburg, Idaho • Crafted with 1980s Vintage Broadcast Aesthetic</p>
+    </footer>
+
+  </div> <!-- /vintage-console-wrapper -->
+
+  <!-- Toast Alert -->
+  <div id="toast" class="vintage-toast"></div>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
