@@ -23,14 +23,9 @@
     <div class="video-overlay-tint"></div>
     <div class="crt-scanline-raster"></div>
     <div class="vhs-grain"></div>
-    <iframe 
-      id="bg-video-frame"
-      src="https://www.youtube-nocookie.com/embed/g_0F-fFjG3I?autoplay=1&mute=1&loop=1&playlist=g_0F-fFjG3I&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1"
-      title="Vintage 80s Broadcast"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <video id="bg-video-player" autoplay loop muted playsinline preload="auto">
+      <source id="bg-video-source" src="assets/videos/retro-commercial.mp4" type="video/mp4">
+    </video>
   </div>
 
   <!-- VINTAGE CHASSIS FRAME -->
@@ -47,14 +42,14 @@
       <div class="tv-controls">
         <div class="channel-knob-group">
           <span class="knob-label">CHANNEL:</span>
-          <button class="channel-btn active" data-channel="commercials" data-video="g_0F-fFjG3I" title="Classic 1980s Commercials">
+          <button class="channel-btn active" data-src="assets/videos/retro-commercial.mp4" data-name="CH 03: 80s Commercials" title="Classic 1980s TV Commercial">
             CH 03 • 80s Ads
           </button>
-          <button class="channel-btn" data-channel="sports" data-video="fQ88v8h1o5w" title="1980s Iconic Sports & Basketball Highlights">
+          <button class="channel-btn" data-src="assets/videos/retro-80s-basketball.mp4" data-name="CH 04: 80s Sports & Basketball" title="1980s Basketball Sports Commercial">
             CH 04 • 80s Sports
           </button>
-          <button class="channel-btn" data-channel="tech" data-video="e_40c_vM3zQ" title="Early Computing & 80s Tech Commercials">
-            CH 08 • 80s Tech
+          <button class="channel-btn" data-src="assets/videos/retro-80s-disco.mp4" data-name="CH 08: 80s Retro & Disco" title="1980s Vintage Disco & Fashion Commercial">
+            CH 08 • 80s Retro
           </button>
         </div>
 
@@ -150,14 +145,9 @@
                 <div class="mini-crt-vignette"></div>
                 <div class="tv-channel-badge" id="screen-ch-badge">CH 03 • LIVE</div>
                 
-                <iframe 
-                  id="pip-video-frame"
-                  src="https://www.youtube-nocookie.com/embed/g_0F-fFjG3I?autoplay=1&mute=1&loop=1&playlist=g_0F-fFjG3I&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1"
-                  title="Vintage 80s Broadcast Screen"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-                </iframe>
+                <video id="tv-video-player" autoplay loop muted playsinline preload="auto">
+                  <source id="tv-video-source" src="assets/videos/retro-commercial.mp4" type="video/mp4">
+                </video>
               </div>
               <div class="mini-crt-controls-bar">
                 <span class="woodgrain-logo">WEBBTRONIC SOLID STATE</span>

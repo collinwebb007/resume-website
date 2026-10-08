@@ -270,42 +270,45 @@ function renderContact() {
 }
 
 // ===================================================================
-// 80s TV CHANNEL SELECTOR & CONTROLS
+// 80s TV CHANNEL SELECTOR & CONTROLS (NATIVE HTML5 VIDEOS)
 // ===================================================================
 function setupTvChannels() {
-  const channelBtns = document.querySelectorAll(".channel-btn[data-channel]");
-  const bgIframe = document.getElementById("bg-video-frame");
-  const pipIframe = document.getElementById("pip-video-frame");
+  const channelBtns = document.querySelectorAll(".channel-btn[data-src]");
+  const bgVideo = document.getElementById("bg-video-player");
+  const tvVideo = document.getElementById("tv-video-player");
   const channelLabel = document.getElementById("current-channel-name");
   const tvBadge = document.getElementById("screen-ch-badge");
 
-  const channelNames = {
-    commercials: "CH 03: 80s Commercials",
-    sports: "CH 04: 80s Sports Highlights",
-    tech: "CH 08: 80s Tech & Computing"
-  };
+  function switchVideo(src, name, badgeText) {
+    if (bgVideo) {
+      bgVideo.src = src;
+      bgVideo.load();
+      bgVideo.play().catch(() => {});
+    }
+    if (tvVideo) {
+      tvVideo.src = src;
+      tvVideo.load();
+      tvVideo.play().catch(() => {});
+    }
+    if (channelLabel) {
+      channelLabel.textContent = name;
+    }
+    if (tvBadge) {
+      tvBadge.textContent = `${badgeText} • LIVE`;
+    }
+    showToast(`📺 Switched to ${name}`);
+  }
 
   channelBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       channelBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const channelKey = btn.getAttribute("data-channel");
-      const videoId = btn.getAttribute("data-video");
-      const newSrc = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1`;
+      const src = btn.getAttribute("data-src");
+      const name = btn.getAttribute("data-name");
+      const badgeText = btn.textContent.trim().split("•")[0].trim();
 
-      if (bgIframe) bgIframe.src = newSrc;
-      if (pipIframe) pipIframe.src = newSrc;
-
-      if (channelLabel && channelNames[channelKey]) {
-        channelLabel.textContent = channelNames[channelKey];
-      }
-
-      if (tvBadge) {
-        tvBadge.textContent = `${btn.textContent.trim().split("•")[0]} • LIVE`;
-      }
-
-      showToast(`📺 Switched to ${channelNames[channelKey] || "New Channel"}`);
+      switchVideo(src, name, badgeText);
     });
   });
 

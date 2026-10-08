@@ -69,14 +69,15 @@ body {
   opacity: 0;
 }
 
-.vintage-video-backdrop iframe {
+.vintage-video-backdrop video {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120vw;
-  height: 120vh;
-  transform: translate(-50%, -50%) scale(1.1);
-  filter: sepia(0.65) contrast(1.15) brightness(0.4) saturate(1.2);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%) scale(1.05);
+  filter: sepia(0.65) contrast(1.15) brightness(0.42) saturate(1.2);
   pointer-events: none;
 }
 
@@ -502,10 +503,10 @@ body {
   border-radius: 10px;
 }
 
-.mini-crt-screen iframe {
+.mini-crt-screen video {
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: cover;
   filter: sepia(0.35) contrast(1.1) brightness(0.9);
 }
 
