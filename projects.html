@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Archives ⋆✴︎˚｡⋆ Collin Webb</title>
+  <meta name="description" content="Featured robotics, CAD, and AI agent projects engineered by Collin Webb.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- AMBIENT 80s VINTAGE VIDEO BACKDROP -->
+  <div class="vintage-video-backdrop" id="video-backdrop">
+    <div class="video-overlay-tint"></div>
+    <div class="crt-scanlines"></div>
+    <video id="bg-video-player" autoplay loop muted playsinline preload="auto">
+      <source id="bg-video-source" src="assets/videos/retro-commercial.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- PINNED TOOLBAR -->
+  <header class="pinned-toolbar">
+    <div class="toolbar-grid">
+      <div class="toolbar-left">
+        <a href="index.html" class="tool-nav-btn">🌎 <span>HOME</span></a>
+        <a href="about.html" class="tool-nav-btn">👤 <span>ABOUT</span></a>
+        <a href="projects.html" class="tool-nav-btn active">🗄️ <span>ARCHIVES</span></a>
+        <a href="contact.html" class="tool-nav-btn">✉️ <span>COMMS</span></a>
+      </div>
+
+      <div class="toolbar-center">
+        <a href="index.html" class="operator-badge">
+          COLLIN WEBB <span class="sparkle">⋆✴︎˚｡⋆</span> <span class="operator-role">AI & ROBOTICS ENGINEER</span>
+        </a>
+      </div>
+
+      <div class="toolbar-right">
+        <div class="earth-time">
+          <span class="pulse-dot"></span>
+          <span>EARTH TIME:</span>
+          <strong id="earth-clock">--:--:--</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 80s TV CHANNEL CONTROLS -->
+  <div class="tv-channel-bar">
+    <div class="channel-info">
+      <span>◈ BROADCAST FEED:</span>
+      <strong id="current-channel-name">CH 03: 80s Commercials</strong>
+    </div>
+
+    <div class="channel-buttons">
+      <button class="ch-btn active" data-src="assets/videos/retro-commercial.mp4" data-name="CH 03: 80s Commercials">
+        CH 03 • 80s Ads
+      </button>
+      <button class="ch-btn" data-src="assets/videos/retro-80s-basketball.mp4" data-name="CH 04: 80s Basketball Sports">
+        CH 04 • 80s Sports
+      </button>
+      <button class="ch-btn" data-src="assets/videos/retro-80s-disco.mp4" data-name="CH 08: 80s Disco & Retro">
+        CH 08 • 80s Retro
+      </button>
+      <button id="toggle-video-bg" class="video-toggle-btn">BG VIDEO: ON</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="site-wrapper">
+    
+    <header class="page-header">
+      <span class="page-kicker">DOSSIER 02 // X-FILES & CLASSIFIED BUILDS</span>
+      <h1 class="page-title">Project Archives</h1>
+      <p class="page-subtitle">
+        Physical electromechanical hardware prototypes, warehouse robotics systems, and autonomous multi-agent software pipelines.
+      </p>
+    </header>
+
+    <!-- Filter Pills -->
+    <div class="project-filter-row">
+      <button class="proj-filter-pill active" data-filter="all">[ ALL PROJECTS ]</button>
+      <button class="proj-filter-pill" data-filter="aiagents">[ AI AGENTS & LLMs ]</button>
+      <button class="proj-filter-pill" data-filter="robotics">[ ROBOTICS & CONTROLS ]</button>
+      <button class="proj-filter-pill" data-filter="caddesign">[ CAD & HARDWARE ]</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-archive-grid" id="projects-grid"></div>
+
+    <!-- FOOTER -->
+    <footer class="retro-footer">
+      <p>© <span id="footer-year">2026</span> Collin Webb ⋆✴︎˚｡⋆ Rexburg, ID ⋆✴︎˚｡⋆ Vintage 80s Broadcast Edition</p>
+    </footer>
+
+  </div>
+
+  <div id="toast" class="vintage-toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
