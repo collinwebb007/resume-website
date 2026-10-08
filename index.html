@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collin Webb ⋆✴︎˚｡⋆ AI & Robotics Systems Engineer</title>
-  <meta name="description" content="Portfolio of Collin Webb - AI & Robotics Systems Engineer. Featuring central 80s CRT TV broadcast, interactive topic buttons, and vintage decor.">
+  <title>NASA Mission Telemetry ⋆ Flight Systems</title>
+  <meta name="description" content="Vintage NASA Mission Control Flight Terminal - Robotics, SolidWorks CAD, and AI Systems.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -25,235 +25,220 @@
     </video>
   </div>
 
-  <!-- PINNED CHLOE-STYLE TOP TOOLBAR -->
+  <div class="nasa-grid-overlay"></div>
+
+  <!-- PINNED NASA FLIGHT DIRECTOR TOOLBAR -->
   <header class="pinned-toolbar">
     <div class="toolbar-grid">
+      
+      <!-- Left: Navigation Links -->
       <div class="toolbar-left">
-        <a href="index.html" class="tool-nav-btn active">🌎 <span>HOME</span></a>
-        <a href="about.html" class="tool-nav-btn">👤 <span>ABOUT</span></a>
-        <a href="projects.html" class="tool-nav-btn">🗄️ <span>ARCHIVES</span></a>
-        <a href="contact.html" class="tool-nav-btn">✉️ <span>COMMS</span></a>
+        <a href="index.html" class="tool-nav-btn active">🚀 <span>MISSION</span></a>
+        <a href="about.html" class="tool-nav-btn">👤 <span>CREW</span></a>
+        <a href="projects.html" class="tool-nav-btn">🗄️ <span>PAYLOAD</span></a>
+        <a href="contact.html" class="tool-nav-btn">📡 <span>COMMS</span></a>
       </div>
 
+      <!-- Center: Vintage NASA Worm Wordmark -->
       <div class="toolbar-center">
-        <a href="index.html" class="operator-badge">
-          COLLIN WEBB <span class="sparkle">⋆✴︎˚｡⋆</span> <span class="operator-role">AI & ROBOTICS ENGINEER</span>
-        </a>
+        <a href="index.html" class="nasa-worm-badge">NASA</a>
+        <span class="nasa-mission-sub">// MISSION CONTROL • FLIGHT DIRECTOR CONSOLE</span>
       </div>
 
+      <!-- Right: Real-time Mission Elapsed Time / Clock -->
       <div class="toolbar-right">
-        <div class="earth-time">
-          <span class="pulse-dot"></span>
-          <span>EARTH TIME:</span>
+        <div class="mission-clock">
+          <span class="status-telemetry-led"></span>
+          <span>MET:</span>
           <strong id="earth-clock">--:--:--</strong>
         </div>
       </div>
+
     </div>
   </header>
 
-  <!-- 80s TV CHANNEL CONTROLS -->
+  <!-- NASA TELEMETRY & CHANNEL TUNER BAR -->
   <div class="tv-channel-bar">
     <div class="channel-info">
-      <span>◈ BROADCAST FEED:</span>
+      <span>◈ VIDEO TELEMETRY FEED:</span>
       <strong id="current-channel-name">CH 03: 80s Commercials</strong>
     </div>
 
     <div class="channel-buttons">
       <button class="ch-btn active" data-src="assets/videos/retro-commercial.mp4" data-name="CH 03: 80s Commercials">
-        CH 03 • 80s Ads
+        FEED 03 • 80s Broadcast
       </button>
       <button class="ch-btn" data-src="assets/videos/retro-80s-basketball.mp4" data-name="CH 04: 80s Basketball Sports">
-        CH 04 • 80s Sports
+        FEED 04 • 80s Sports
       </button>
       <button class="ch-btn" data-src="assets/videos/retro-80s-disco.mp4" data-name="CH 08: 80s Disco & Retro">
-        CH 08 • 80s Retro
+        FEED 08 • 80s Retro
       </button>
-      <button id="toggle-video-bg" class="video-toggle-btn">BG VIDEO: ON</button>
+      <button id="toggle-video-bg" class="video-toggle-btn">BG FEED: ON</button>
     </div>
   </div>
 
-  <!-- MAIN STAGE -->
+  <!-- MAIN SIMPLISTIC NASA STAGE -->
   <div class="site-wrapper">
     
-    <div class="stage-wrapper">
+    <div class="nasa-home-stage">
       
-      <!-- Masthead -->
-      <div class="stage-masthead">
-        <div class="masthead-edition">
-          <span>VOLUME 8086 • REXBURG, IDAHO</span>
-          <span style="color:var(--amber-primary);margin:0 0.5rem;">•</span>
-          <span style="color:var(--retro-green);">ACTIVE BROADCAST ONLINE</span>
-        </div>
-        <h1 class="main-title">
-          Collin <span class="amber">Webb</span>
-        </h1>
-        <p class="hero-tagline">
-          Bridging autonomous AI agents, robotics automation, and physical CAD engineering to build intelligent real-world systems.
-        </p>
-      </div>
-
       <!-- =========================================================
-           ARENA: RETRO TV IN THE MIDDLE SURROUNDED BY TOPIC BUTTONS
+           ARENA: CENTRAL NASA CRT TV SURROUNDED BY ICONS ON SIDES
            ========================================================= -->
-      <div class="stage-grid-arena">
+      <div class="nasa-stage-grid">
         
-        <!-- LEFT COLUMN: TOPIC BUTTONS (3 ITEMS) -->
+        <!-- LEFT ICONS COLUMN (3 ITEMS) -->
         <div style="display: flex; flex-direction: column; gap: 1.4rem;">
           
-          <!-- Topic 1: About Collin (Floppy Disk Icon) -->
-          <a href="about.html" class="topic-button-card float-1">
-            <div class="topic-icon-wrap">
-              <!-- SVG Floppy Disk Icon -->
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="18" height="18" rx="2" fill="#2d1d12" stroke="#f59e0b" stroke-width="1.8"/>
-                <rect x="7" y="3" width="10" height="6" fill="#e5d5c3"/>
-                <rect x="13" y="4" width="3" height="4" fill="#2d1d12"/>
-                <rect x="6" y="12" width="12" height="7" rx="1" fill="#fef3c7"/>
-                <line x1="8" y1="14" x2="16" y2="14" stroke="#78350f" stroke-width="1.2"/>
-                <line x1="8" y1="16.5" x2="14" y2="16.5" stroke="#78350f" stroke-width="1.2"/>
+          <!-- Icon 1: Crew Dossier / About -->
+          <a href="about.html" class="topic-icon-card float-1">
+            <div class="icon-graphic-box">
+              <!-- Astronaut / Crew Icon -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M5.5 21V19C5.5 15.6863 8.18629 13 11.5 13H12.5C15.8137 13 18.5 15.6863 18.5 19V21"/>
+                <circle cx="12" cy="7" r="1.5" fill="#ea384c"/>
               </svg>
             </div>
-            <div class="topic-meta-wrap">
-              <span class="topic-kicker">PROFILE // 01</span>
-              <h3 class="topic-title">About Collin</h3>
-              <span class="topic-action-hint">Read Story & Pillars →</span>
+            <div class="topic-text-col">
+              <span class="topic-tag">SECTION 01</span>
+              <span class="topic-label">CREW DOSSIER</span>
+              <span class="topic-dest-arrow">VIEW LOGS →</span>
             </div>
           </a>
 
-          <!-- Topic 2: Warehouse Robotics (Robotic Arm Icon) -->
-          <a href="projects.html#project-1" class="topic-button-card float-2">
-            <div class="topic-icon-wrap">
-              <!-- SVG Robotic Arm Icon -->
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
-                <rect x="4" y="18" width="16" height="4" rx="1" fill="#3a2517"/>
-                <circle cx="12" cy="18" r="3" fill="#f59e0b"/>
-                <line x1="12" y1="15" x2="9" y2="9"/>
-                <circle cx="9" cy="9" r="2.5" fill="#f59e0b"/>
-                <line x1="9" y1="9" x2="16" y2="5"/>
-                <circle cx="16" cy="5" r="2" fill="#fbbf24"/>
-                <path d="M15 2L18 4M18 4L15 6" stroke="#fbbf24" stroke-width="2"/>
+          <!-- Icon 2: Warehouse Robotics -->
+          <a href="projects.html#project-1" class="topic-icon-card float-2">
+            <div class="icon-graphic-box">
+              <!-- Robotics Arm Icon -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <rect x="4" y="18" width="16" height="4" rx="1"/>
+                <circle cx="12" cy="18" r="2.5" fill="#ea384c"/>
+                <line x1="12" y1="15.5" x2="8" y2="9"/>
+                <circle cx="8" cy="9" r="2" fill="#38bdf8"/>
+                <line x1="8" y1="9" x2="16" y2="4"/>
+                <circle cx="16" cy="4" r="2" fill="#ea384c"/>
               </svg>
             </div>
-            <div class="topic-meta-wrap">
-              <span class="topic-kicker">HARDWARE // 02</span>
-              <h3 class="topic-title">Robotics Systems</h3>
-              <span class="topic-action-hint">Storage Automation →</span>
+            <div class="topic-text-col">
+              <span class="topic-tag">PAYLOAD 02</span>
+              <span class="topic-label">ROBOTICS SYSTEMS</span>
+              <span class="topic-dest-arrow">STORAGE AUTOMATION →</span>
             </div>
           </a>
 
-          <!-- Topic 3: SolidWorks 3D CAD (Calipers & Isometric Cube Icon) -->
-          <a href="projects.html#project-3" class="topic-button-card float-3">
-            <div class="topic-icon-wrap">
-              <!-- SVG Isometric Drafting Cube Icon -->
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
-                <path d="M12 2L21 7V17L12 22L3 17V7L12 2Z" fill="#2d1d12"/>
+          <!-- Icon 3: SolidWorks CAD Blueprints -->
+          <a href="projects.html#project-3" class="topic-icon-card float-3">
+            <div class="icon-graphic-box">
+              <!-- CAD Isometric Cube Icon -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <path d="M12 2L21 7V17L12 22L3 17V7L12 2Z"/>
                 <line x1="12" y1="12" x2="12" y2="22"/>
                 <line x1="12" y1="12" x2="21" y2="7"/>
                 <line x1="12" y1="12" x2="3" y2="7"/>
-                <circle cx="12" cy="12" r="1.5" fill="#fbbf24"/>
+                <circle cx="12" cy="12" r="1.5" fill="#ea384c"/>
               </svg>
             </div>
-            <div class="topic-meta-wrap">
-              <span class="topic-kicker">CSWA // 03</span>
-              <h3 class="topic-title">SolidWorks CAD</h3>
-              <span class="topic-action-hint">3D Mechanical Design →</span>
+            <div class="topic-text-col">
+              <span class="topic-tag">BLUEPRINT 03</span>
+              <span class="topic-label">SOLIDWORKS CAD</span>
+              <span class="topic-dest-arrow">CSWA MECHANICAL →</span>
             </div>
           </a>
 
         </div>
 
-        <!-- CENTER: RETRO CRT TV MONITOR PLAYING VIDEO -->
-        <div class="arena-center-tv">
-          <div class="hero-tv-container">
-            <div class="hero-tv-screen">
+        <!-- CENTER: VINTAGE NASA CRT TV MONITOR -->
+        <div class="center-tv-wrapper">
+          <div class="nasa-crt-monitor">
+            <div class="nasa-crt-bezel-top">
+              <span class="nasa-worm-logo">NASA</span>
+              <span class="telemetry-ch-badge" id="screen-ch-badge">CH 03 • TELEMETRY</span>
+              <span style="color:var(--text-dim);">FPS: 60</span>
+            </div>
+            <div class="nasa-screen-glass">
               <div class="crt-scanlines"></div>
-              <div class="screen-badge" id="screen-ch-badge">CH 03 • LIVE BROADCAST</div>
               <video id="tv-video-player" autoplay loop muted playsinline preload="auto">
                 <source src="assets/videos/retro-commercial.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="tv-bottom-chassis">
-              <span>WEBBTRONIC SOLID STATE CRT // MODEL 8086</span>
-              <div class="tv-dials">
-                <span title="VHF Tuner">⨁</span>
-                <span title="UHF Tuner">⨁</span>
+            <div class="nasa-crt-controls-plate">
+              <span>AVIONICS CRT DISPLAY UNIT // MODEL 8086</span>
+              <div class="dials-group">
+                <span title="Tuning">⨁</span>
+                <span title="Horizontal Sync">⨁</span>
               </div>
             </div>
           </div>
 
-          <!-- Direct Sub-Buttons Below TV -->
-          <div style="display: flex; gap: 0.8rem; margin-top: 1.2rem; flex-wrap: wrap; justify-content: center;">
-            <a href="contact.html" class="btn-quirky" style="font-size: 0.88rem; padding: 0.55rem 1.3rem;">
-              Transmit Comms ✉️
+          <!-- Buttons Directly Below TV -->
+          <div class="tv-sub-actions">
+            <a href="contact.html" class="btn-nasa-primary">
+              Comms Link 📡
             </a>
-            <button id="copy-email-btn" class="btn-quirky-sec" style="font-size: 0.88rem; padding: 0.55rem 1.3rem;">
-              Copy Email 📋
+            <button id="copy-email-btn" class="btn-nasa-secondary">
+              Copy Frequency 📋
             </button>
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: TOPIC BUTTONS (3 ITEMS) -->
+        <!-- RIGHT ICONS COLUMN (3 ITEMS) -->
         <div style="display: flex; flex-direction: column; gap: 1.4rem;">
           
-          <!-- Topic 4: Project Archives (Filing Cabinet Icon) -->
-          <a href="projects.html" class="topic-button-card float-2">
-            <div class="topic-icon-wrap">
-              <!-- SVG Filing Cabinet Icon -->
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
-                <rect x="4" y="3" width="16" height="18" rx="2" fill="#2d1d12"/>
-                <line x1="4" y1="9" x2="20" y2="9"/>
-                <line x1="4" y1="15" x2="20" y2="15"/>
-                <rect x="10" y="5.5" width="4" height="1.8" rx="0.5" fill="#fbbf24"/>
-                <rect x="10" y="11.5" width="4" height="1.8" rx="0.5" fill="#fbbf24"/>
-                <rect x="10" y="17.5" width="4" height="1.8" rx="0.5" fill="#fbbf24"/>
+          <!-- Icon 4: Flight Archives (Projects) -->
+          <a href="projects.html" class="topic-icon-card float-2">
+            <div class="icon-graphic-box">
+              <!-- Payload Box Icon -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <path d="M21 8V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V8"/>
+                <path d="M23 4H1V8H23V4Z"/>
+                <path d="M10 12H14" stroke="#ea384c"/>
               </svg>
             </div>
-            <div class="topic-meta-wrap">
-              <span class="topic-kicker">DOSSIER // 04</span>
-              <h3 class="topic-title">Project Archives</h3>
-              <span class="topic-action-hint">Enter X-Files Builds →</span>
+            <div class="topic-text-col">
+              <span class="topic-tag">SECTION 04</span>
+              <span class="topic-label">FLIGHT ARCHIVES</span>
+              <span class="topic-dest-arrow">ALL PROJECTS →</span>
             </div>
           </a>
 
-          <!-- Topic 5: Agentic AI & LLMs (Silicon Chip Icon) -->
-          <a href="projects.html#project-2" class="topic-button-card float-4">
-            <div class="topic-icon-wrap">
-              <!-- SVG Microprocessor Chip Icon -->
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
-                <rect x="6" y="6" width="12" height="12" rx="2" fill="#2d1d12"/>
-                <rect x="9" y="9" width="6" height="6" fill="#f59e0b"/>
-                <line x1="9" y1="2" x2="9" y2="6"/>
-                <line x1="15" y1="2" x2="15" y2="6"/>
-                <line x1="9" y1="18" x2="9" y2="22"/>
-                <line x1="15" y1="18" x2="15" y2="22"/>
-                <line x1="2" y1="9" x2="6" y2="9"/>
-                <line x1="2" y1="15" x2="6" y2="15"/>
-                <line x1="18" y1="9" x2="22" y2="9"/>
-                <line x1="18" y1="15" x2="22" y2="15"/>
+          <!-- Icon 5: Neural AI Core -->
+          <a href="projects.html#project-2" class="topic-icon-card float-1">
+            <div class="icon-graphic-box">
+              <!-- Microprocessor Chip Icon -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <rect x="5" y="5" width="14" height="14" rx="2"/>
+                <circle cx="12" cy="12" r="3" fill="#ea384c"/>
+                <line x1="12" y1="1" x2="12" y2="5"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="1" y1="12" x2="5" y2="12"/>
+                <line x1="19" y1="12" x2="23" y2="12"/>
               </svg>
             </div>
-            <div class="topic-meta-wrap">
-              <span class="topic-kicker">SOFTWARE // 05</span>
-              <h3 class="topic-title">Agentic AI & LLMs</h3>
-              <span class="topic-action-hint">Chatbots & RAG →</span>
+            <div class="topic-text-col">
+              <span class="topic-tag">SYSTEMS 05</span>
+              <span class="topic-label">AI AGENT CORE</span>
+              <span class="topic-dest-arrow">LLM & RAG →</span>
             </div>
           </a>
 
-          <!-- Topic 6: BYU-Idaho Business Analytics (Ledger & Seal Icon) -->
-          <a href="about.html#education" class="topic-button-card float-1">
-            <div class="topic-icon-wrap">
-              <!-- SVG University Seal & Ledger Icon -->
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
-                <path d="M12 3L2 8L12 13L22 8L12 3Z" fill="#2d1d12"/>
-                <path d="M5 10.5V16C5 18.5 8.1 20.5 12 20.5C15.9 20.5 19 18.5 19 16V10.5"/>
-                <line x1="22" y1="8" x2="22" y2="15"/>
-                <circle cx="22" cy="15.5" r="1.5" fill="#fbbf24"/>
+          <!-- Icon 6: Mission Analytics (BYU-I) -->
+          <a href="about.html#education" class="topic-icon-card float-3">
+            <div class="icon-graphic-box">
+              <!-- Analytics Orbit Icon -->
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+                <circle cx="12" cy="4" r="1.5" fill="#ea384c"/>
+                <circle cx="18" cy="10" r="1.5" fill="#38bdf8"/>
               </svg>
             </div>
-            <div class="topic-meta-wrap">
-              <span class="topic-kicker">DEGREE // 06</span>
-              <h3 class="topic-title">BYU-I Analytics</h3>
-              <span class="topic-action-hint">Business Analytics →</span>
+            <div class="topic-text-col">
+              <span class="topic-tag">DEGREE 06</span>
+              <span class="topic-label">BYU-I ANALYTICS</span>
+              <span class="topic-dest-arrow">BUSINESS ANALYTICS →</span>
             </div>
           </a>
 
@@ -262,75 +247,67 @@
       </div>
 
       <!-- =========================================================
-           VINTAGE DECORATIONS GALLERY (SCATTERED AROUND THE DESK)
-           Old posters, books stack, VHS cassette, Polaroid photo
+           VINTAGE NASA BACKGROUND DECORATIONS (SCATTERED)
+           Mission Patch, Apollo Trajectory Chart, Shuttle Blueprint
            ========================================================= -->
-      <div class="stage-decor-gallery">
+      <div class="nasa-decor-gallery">
         
-        <!-- Decor 1: 1980s VHS Cassette Tape -->
-        <div class="decor-object vhs-cassette float-1" style="transform: rotate(-3deg);" title="Click to tune channel">
-          <div class="vhs-label-sticker">
-            <div style="font-weight: bold; color: #991b1b; font-size: 0.7rem;">HQ T-120 • TDK VINTAGE</div>
-            <div>COLLIN_WEBB_DEMO_REEL_1986</div>
-          </div>
-          <div class="vhs-tape-window">
-            <div class="vhs-spool"></div>
-            <div style="height: 6px; width: 35px; background: #262626; border-radius: 2px;"></div>
-            <div class="vhs-spool"></div>
-          </div>
+        <!-- Decor 1: STS-8086 Mission Patch -->
+        <div class="nasa-decor-item nasa-mission-patch" title="NASA STS-8086 Mission Patch">
+          <svg width="42" height="42" viewBox="0 0 32 32" fill="none">
+            <path d="M16 3L21 14H11L16 3Z" fill="#ea384c"/>
+            <circle cx="16" cy="18" r="9" stroke="#38bdf8" stroke-width="1.8"/>
+            <circle cx="16" cy="18" r="2" fill="#fff"/>
+            <path d="M7 25L25 11" stroke="#fbbf24" stroke-width="1.5"/>
+          </svg>
+          <span class="patch-title">STS-8086</span>
+          <span style="font-family: var(--font-mono); font-size: 0.6rem; color: #38bdf8;">REXBURG NODE</span>
         </div>
 
-        <!-- Decor 2: Stack of Vintage Engineering Textbooks -->
-        <div class="decor-object vintage-books-stack float-2" style="transform: rotate(2deg);" title="Engineering Textbooks">
-          <div class="book-spine book-1">✦ ROBOTICS & KINEMATICS (1984)</div>
-          <div class="book-spine book-2">✦ SOLIDWORKS CAD MANUAL</div>
-          <div class="book-spine book-3">✦ DATA SYSTEMS & BUSINESS ANALYTICS</div>
-        </div>
-
-        <!-- Decor 3: Vintage 1980s NASA Shuttle Wall Poster -->
-        <div class="decor-object retro-poster float-3" style="width: 170px; transform: rotate(-2deg);" title="NASA Space Shuttle Poster">
-          <div class="poster-art-area">
-            <!-- Retro Shuttle Art -->
-            <svg width="45" height="60" viewBox="0 0 24 32" fill="none">
-              <path d="M12 2L16 10V24L20 28V30H4V28L8 24V10L12 2Z" fill="#e2e8f0" stroke="#f59e0b" stroke-width="1.2"/>
-              <polygon points="12,28 10,31 14,31" fill="#f97316"/>
-              <circle cx="5" cy="6" r="1" fill="#fff"/>
-              <circle cx="19" cy="8" r="1.2" fill="#fff"/>
-              <circle cx="18" cy="18" r="0.8" fill="#fbbf24"/>
-            </svg>
-            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: #f59e0b; margin-top: 2px;">NASA • 1986</span>
+        <!-- Decor 2: Apollo Lunar Trajectory Chart -->
+        <div class="nasa-decor-item apollo-chart-box" title="Apollo Lunar Trajectory Chart">
+          <div class="chart-header">
+            <span>TRAJECTORY PLOT</span>
+            <span style="color:#22c55e;">GO FOR TLI</span>
           </div>
-          <span class="poster-caption">REXBURG NODE 8086</span>
-        </div>
-
-        <!-- Decor 4: Vintage Polaroid Snapshot of Collin's Lab -->
-        <div class="decor-object polaroid-photo float-4" style="transform: rotate(3deg);" title="Collin's Tech Lab Snapshot">
-          <div class="polaroid-image-frame">
-            <!-- CRT Icon inside Polaroid -->
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8">
-              <rect x="2" y="3" width="20" height="15" rx="3" fill="#2d1d12"/>
-              <circle cx="7" cy="10" r="1.5" fill="#4ade80"/>
-              <path d="M12 8L16 12M16 8L12 12" stroke="#fbbf24"/>
-              <line x1="8" y1="21" x2="16" y2="21"/>
-              <line x1="12" y1="18" x2="12" y2="21"/>
+          <div class="chart-art">
+            <svg width="100%" height="100%" viewBox="0 0 180 50">
+              <circle cx="25" cy="25" r="12" fill="#1e3a8a" stroke="#38bdf8" stroke-width="1.5"/>
+              <circle cx="150" cy="25" r="7" fill="#64748b" stroke="#cbd5e1" stroke-width="1"/>
+              <!-- Trajectory curve -->
+              <path d="M25 13 Q 90 2, 150 18" fill="none" stroke="#ea384c" stroke-width="1.5" stroke-dasharray="3,2"/>
+              <path d="M150 32 Q 90 48, 25 37" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
             </svg>
           </div>
-          <div class="polaroid-caption">Collin's Lab '86 ⚡</div>
+          <span style="font-family: var(--font-mono); font-size: 0.64rem; color: #64748b; display: block; margin-top: 3px;">
+            EARTH-MOON ORBITAL TRANSFER
+          </span>
         </div>
 
-        <!-- Decor 5: 1984 Classic Computer Poster -->
-        <div class="decor-object retro-poster float-1" style="width: 170px; transform: rotate(-1deg);" title="1984 Macintosh Poster">
-          <div class="poster-art-area" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
-            <!-- Retro Classic Computer -->
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.6">
-              <rect x="4" y="3" width="16" height="15" rx="2" fill="#332214"/>
-              <rect x="6" y="5" width="12" height="8" fill="#110a05"/>
-              <line x1="6" y1="15" x2="14" y2="15"/>
-              <rect x="3" y="19" width="18" height="2" rx="1" fill="#78350f"/>
-            </svg>
-            <span style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--retro-green); margin-top: 3px;">HELLO WORLD</span>
+        <!-- Decor 3: Space Shuttle Blueprint -->
+        <div class="nasa-decor-item shuttle-blueprint" title="Space Shuttle Orbiter Blueprint">
+          <svg width="45" height="55" viewBox="0 0 24 32" fill="none">
+            <path d="M12 2L16 10V24L20 28V30H4V28L8 24V10L12 2Z" fill="#0f172a" stroke="#38bdf8" stroke-width="1.4"/>
+            <polygon points="12,27 10,31 14,31" fill="#ea384c"/>
+            <line x1="8" y1="18" x2="16" y2="18" stroke="#38bdf8" stroke-width="0.8"/>
+          </svg>
+          <span class="blueprint-label">ORBITER // SPEC 8086</span>
+        </div>
+
+        <!-- Decor 4: Mission Telemetry Module -->
+        <div class="nasa-decor-item telemetry-module" title="Mission Telemetry Status">
+          <div class="telemetry-row">
+            <span>MISSION STATUS:</span>
+            <span class="telemetry-val">NOMINAL</span>
           </div>
-          <span class="poster-caption">PERSONAL TECH '84</span>
+          <div class="telemetry-row">
+            <span>COMM FREQ:</span>
+            <span style="color:#38bdf8;">2287.5 MHZ</span>
+          </div>
+          <div class="telemetry-row">
+            <span>FLIGHT REGISTRY:</span>
+            <span style="color:#fff;">BYU-I / CSWA</span>
+          </div>
         </div>
 
       </div>
@@ -339,7 +316,7 @@
 
     <!-- FOOTER -->
     <footer class="retro-footer">
-      <p>© <span id="footer-year">2026</span> Collin Webb ⋆✴︎˚｡⋆ Rexburg, ID ⋆✴︎˚｡⋆ Vintage 80s Broadcast Edition</p>
+      <p>NATIONAL AERONAUTICS AND SPACE ADMINISTRATION // FLIGHT TELEMETRY NODE 8086 // REXBURG, ID</p>
     </footer>
 
   </div>

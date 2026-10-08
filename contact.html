@@ -25,50 +25,51 @@
     </video>
   </div>
 
-  <!-- PINNED TOOLBAR -->
+  <div class="nasa-grid-overlay"></div>
+
+  <!-- PINNED NASA FLIGHT DIRECTOR TOOLBAR -->
   <header class="pinned-toolbar">
     <div class="toolbar-grid">
       <div class="toolbar-left">
-        <a href="index.html" class="tool-nav-btn">🌎 <span>HOME</span></a>
-        <a href="about.html" class="tool-nav-btn">👤 <span>ABOUT</span></a>
-        <a href="projects.html" class="tool-nav-btn">🗄️ <span>ARCHIVES</span></a>
-        <a href="contact.html" class="tool-nav-btn active">✉️ <span>COMMS</span></a>
+        <a href="index.html" class="tool-nav-btn">🚀 <span>MISSION</span></a>
+        <a href="about.html" class="tool-nav-btn">👤 <span>CREW</span></a>
+        <a href="projects.html" class="tool-nav-btn">🗄️ <span>PAYLOAD</span></a>
+        <a href="contact.html" class="tool-nav-btn active">📡 <span>COMMS</span></a>
       </div>
 
       <div class="toolbar-center">
-        <a href="index.html" class="operator-badge">
-          COLLIN WEBB <span class="sparkle">⋆✴︎˚｡⋆</span> <span class="operator-role">AI & ROBOTICS ENGINEER</span>
-        </a>
+        <a href="index.html" class="nasa-worm-badge">NASA</a>
+        <span class="nasa-mission-sub">// MISSION CONTROL • FLIGHT DIRECTOR CONSOLE</span>
       </div>
 
       <div class="toolbar-right">
-        <div class="earth-time">
-          <span class="pulse-dot"></span>
-          <span>EARTH TIME:</span>
+        <div class="mission-clock">
+          <span class="status-telemetry-led"></span>
+          <span>MET:</span>
           <strong id="earth-clock">--:--:--</strong>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- 80s TV CHANNEL CONTROLS -->
+  <!-- NASA TELEMETRY & CHANNEL TUNER BAR -->
   <div class="tv-channel-bar">
     <div class="channel-info">
-      <span>◈ BROADCAST FEED:</span>
+      <span>◈ VIDEO TELEMETRY FEED:</span>
       <strong id="current-channel-name">CH 03: 80s Commercials</strong>
     </div>
 
     <div class="channel-buttons">
       <button class="ch-btn active" data-src="assets/videos/retro-commercial.mp4" data-name="CH 03: 80s Commercials">
-        CH 03 • 80s Ads
+        FEED 03 • 80s Broadcast
       </button>
       <button class="ch-btn" data-src="assets/videos/retro-80s-basketball.mp4" data-name="CH 04: 80s Basketball Sports">
-        CH 04 • 80s Sports
+        FEED 04 • 80s Sports
       </button>
       <button class="ch-btn" data-src="assets/videos/retro-80s-disco.mp4" data-name="CH 08: 80s Disco & Retro">
-        CH 08 • 80s Retro
+        FEED 08 • 80s Retro
       </button>
-      <button id="toggle-video-bg" class="video-toggle-btn">BG VIDEO: ON</button>
+      <button id="toggle-video-bg" class="video-toggle-btn">BG FEED: ON</button>
     </div>
   </div>
 
@@ -76,25 +77,25 @@
   <div class="site-wrapper">
     
     <header class="page-header">
-      <span class="page-kicker">DOSSIER 03 // COMMUNICATIONS LINK</span>
+      <span class="page-kicker">COMMS 03 // COMMUNICATIONS LINK & DIRECT FEED</span>
       <h1 class="page-title">Establish Transmission</h1>
       <p class="page-subtitle">
-        Direct channel for engineering inquiries, job opportunities, and collaborative technology ventures.
+        Direct channel for engineering inquiries, mission briefings, and collaborative technology ventures.
       </p>
     </header>
 
     <div class="contact-console">
       <h2 class="contact-console-title">Let's Build Something Exceptional</h2>
-      <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-parchment); margin-bottom: 2rem;">
+      <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-lunar); margin-bottom: 2rem;">
         Open to high-impact opportunities in AI Systems Architecture, Multi-Agent Development, Warehouse Robotics Automation, and SolidWorks CAD Prototyping.
       </p>
 
       <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
-        <a id="mailto-link" href="mailto:collinwebb007@gmail.com" class="btn-quirky" style="font-size: 1.05rem; padding: 0.85rem 2rem;">
-          Transmit Email (collinwebb007@gmail.com) ✉️
+        <a id="mailto-link" href="mailto:collinwebb007@gmail.com" class="btn-nasa-primary" style="font-size: 1rem; padding: 0.75rem 1.8rem;">
+          Transmit Signal (collinwebb007@gmail.com) ✉️
         </a>
-        <button id="copy-email-btn" class="btn-quirky-sec" style="font-size: 1.05rem; padding: 0.85rem 2rem;">
-          Copy Email to Clipboard 📋
+        <button id="copy-email-btn" class="btn-nasa-secondary" style="font-size: 1rem; padding: 0.75rem 1.8rem;">
+          Copy Frequency 📋
         </button>
       </div>
 
@@ -110,7 +111,7 @@
 
     <!-- FOOTER -->
     <footer class="retro-footer">
-      <p>© <span id="footer-year">2026</span> Collin Webb ⋆✴︎˚｡⋆ Rexburg, ID ⋆✴︎˚｡⋆ Vintage 80s Broadcast Edition</p>
+      <p>NATIONAL AERONAUTICS AND SPACE ADMINISTRATION // FLIGHT TELEMETRY NODE 8086 // REXBURG, ID</p>
     </footer>
 
   </div>

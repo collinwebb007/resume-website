@@ -89,7 +89,7 @@ function setupTvChannels() {
 }
 
 // ===================================================================
-// VINTAGE DECORATIONS INTERACTION
+// VINTAGE NASA DECORATIONS INTERACTION
 // ===================================================================
 function setupRandomChannelCard() {
   const vhsTape = document.querySelector(".vhs-cassette");
@@ -105,17 +105,31 @@ function setupRandomChannelCard() {
     });
   }
 
-  const books = document.querySelector(".vintage-books-stack");
-  if (books) {
-    books.addEventListener("click", () => {
-      showToast("📚 Engineering Stack: Robotics, SolidWorks CAD, & Business Analytics!");
+  const patch = document.querySelector(".nasa-mission-patch");
+  if (patch) {
+    patch.addEventListener("click", () => {
+      showToast("🚀 NASA Mission Patch: STS-8086 • Flight Node Rexburg");
     });
   }
 
-  const polaroid = document.querySelector(".polaroid-photo");
-  if (polaroid) {
-    polaroid.addEventListener("click", () => {
-      showToast("📸 Snapshot: Collin Webb • Tech Lab // Rexburg, ID");
+  const apolloChart = document.querySelector(".apollo-chart-box");
+  if (apolloChart) {
+    apolloChart.addEventListener("click", () => {
+      showToast("🛰️ Apollo Trajectory Plot: Earth-Moon Orbital Transfer — GO for TLI");
+    });
+  }
+
+  const blueprint = document.querySelector(".shuttle-blueprint");
+  if (blueprint) {
+    blueprint.addEventListener("click", () => {
+      showToast("📐 Space Shuttle Orbiter Blueprint // Spec 8086 CSWA");
+    });
+  }
+
+  const telemetry = document.querySelector(".telemetry-module");
+  if (telemetry) {
+    telemetry.addEventListener("click", () => {
+      showToast("📡 Telemetry: Systems Nominal • BYU-I Flight Registry");
     });
   }
 }

@@ -25,50 +25,51 @@
     </video>
   </div>
 
-  <!-- PINNED TOOLBAR -->
+  <div class="nasa-grid-overlay"></div>
+
+  <!-- PINNED NASA FLIGHT DIRECTOR TOOLBAR -->
   <header class="pinned-toolbar">
     <div class="toolbar-grid">
       <div class="toolbar-left">
-        <a href="index.html" class="tool-nav-btn">🌎 <span>HOME</span></a>
-        <a href="about.html" class="tool-nav-btn active">👤 <span>ABOUT</span></a>
-        <a href="projects.html" class="tool-nav-btn">🗄️ <span>ARCHIVES</span></a>
-        <a href="contact.html" class="tool-nav-btn">✉️ <span>COMMS</span></a>
+        <a href="index.html" class="tool-nav-btn">🚀 <span>MISSION</span></a>
+        <a href="about.html" class="tool-nav-btn active">👤 <span>CREW</span></a>
+        <a href="projects.html" class="tool-nav-btn">🗄️ <span>PAYLOAD</span></a>
+        <a href="contact.html" class="tool-nav-btn">📡 <span>COMMS</span></a>
       </div>
 
       <div class="toolbar-center">
-        <a href="index.html" class="operator-badge">
-          COLLIN WEBB <span class="sparkle">⋆✴︎˚｡⋆</span> <span class="operator-role">AI & ROBOTICS ENGINEER</span>
-        </a>
+        <a href="index.html" class="nasa-worm-badge">NASA</a>
+        <span class="nasa-mission-sub">// MISSION CONTROL • FLIGHT DIRECTOR CONSOLE</span>
       </div>
 
       <div class="toolbar-right">
-        <div class="earth-time">
-          <span class="pulse-dot"></span>
-          <span>EARTH TIME:</span>
+        <div class="mission-clock">
+          <span class="status-telemetry-led"></span>
+          <span>MET:</span>
           <strong id="earth-clock">--:--:--</strong>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- 80s TV CHANNEL CONTROLS -->
+  <!-- NASA TELEMETRY & CHANNEL TUNER BAR -->
   <div class="tv-channel-bar">
     <div class="channel-info">
-      <span>◈ BROADCAST FEED:</span>
+      <span>◈ VIDEO TELEMETRY FEED:</span>
       <strong id="current-channel-name">CH 03: 80s Commercials</strong>
     </div>
 
     <div class="channel-buttons">
       <button class="ch-btn active" data-src="assets/videos/retro-commercial.mp4" data-name="CH 03: 80s Commercials">
-        CH 03 • 80s Ads
+        FEED 03 • 80s Broadcast
       </button>
       <button class="ch-btn" data-src="assets/videos/retro-80s-basketball.mp4" data-name="CH 04: 80s Basketball Sports">
-        CH 04 • 80s Sports
+        FEED 04 • 80s Sports
       </button>
       <button class="ch-btn" data-src="assets/videos/retro-80s-disco.mp4" data-name="CH 08: 80s Disco & Retro">
-        CH 08 • 80s Retro
+        FEED 08 • 80s Retro
       </button>
-      <button id="toggle-video-bg" class="video-toggle-btn">BG VIDEO: ON</button>
+      <button id="toggle-video-bg" class="video-toggle-btn">BG FEED: ON</button>
     </div>
   </div>
 
@@ -86,48 +87,48 @@
     <div class="content-grid">
       
       <!-- Bio Summary Panel -->
-      <section class="retro-panel">
+      <section class="nasa-panel">
         <h2 class="panel-title">The Engineering Approach</h2>
-        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;">
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; color: var(--text-lunar);">
           I specialize in architecting intelligent systems that pair autonomous AI agents and modern software with physical and robotics foundations. With hands-on experience spanning agentic AI workflows, robotics engineering, and precision SolidWorks CAD design, I bring a multidisciplinary ability to bridge software intelligence with real-world execution.
         </p>
-        <p style="font-size: 1.05rem; line-height: 1.7;">
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-lunar);">
           Currently studying Business Analytics at BYU-Idaho and holding a Certified SolidWorks Associate (CSWA) credential, I combine quantitative ROI and systems efficiency with the technical ability to prototype hardware and deploy multi-agent code.
         </p>
       </section>
 
       <!-- 4 Core Pillars -->
-      <section class="retro-panel">
+      <section class="nasa-panel">
         <h2 class="panel-title">Core Engineering Pillars</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem;">
-          <div style="background: rgba(0,0,0,0.35); padding: 1.2rem; border: 1px solid var(--border-warm); border-radius: var(--radius-sm);">
-            <div style="color: var(--amber-bright); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 01</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-cream); margin-bottom: 0.4rem;">Autonomous Agent Architecture</h3>
-            <p style="font-size: 0.9rem; color: var(--text-parchment);">Designing multi-agent systems that autonomously reason, leverage tools, and execute complex pipelines.</p>
+          <div style="background: rgba(10, 16, 30, 0.7); padding: 1.2rem; border: 1px solid var(--nasa-border); border-radius: var(--radius-sm);">
+            <div style="color: var(--nasa-cyan); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 01</div>
+            <h3 style="font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-white); margin-bottom: 0.4rem;">Autonomous Agent Architecture</h3>
+            <p style="font-size: 0.9rem; color: var(--text-lunar);">Designing multi-agent systems that autonomously reason, leverage tools, and execute complex pipelines.</p>
           </div>
 
-          <div style="background: rgba(0,0,0,0.35); padding: 1.2rem; border: 1px solid var(--border-warm); border-radius: var(--radius-sm);">
-            <div style="color: var(--amber-bright); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 02</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-cream); margin-bottom: 0.4rem;">Physical-to-Digital Synthesis</h3>
-            <p style="font-size: 0.9rem; color: var(--text-parchment);">Uniting software intelligence with real-world actuators, optical sensors, and microcontrollers.</p>
+          <div style="background: rgba(10, 16, 30, 0.7); padding: 1.2rem; border: 1px solid var(--nasa-border); border-radius: var(--radius-sm);">
+            <div style="color: var(--nasa-cyan); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 02</div>
+            <h3 style="font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-white); margin-bottom: 0.4rem;">Physical-to-Digital Synthesis</h3>
+            <p style="font-size: 0.9rem; color: var(--text-lunar);">Uniting software intelligence with real-world actuators, optical sensors, and microcontrollers.</p>
           </div>
 
-          <div style="background: rgba(0,0,0,0.35); padding: 1.2rem; border: 1px solid var(--border-warm); border-radius: var(--radius-sm);">
-            <div style="color: var(--amber-bright); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 03</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-cream); margin-bottom: 0.4rem;">Rapid Prototyping (CAD to Code)</h3>
-            <p style="font-size: 0.9rem; color: var(--text-parchment);">Taking concepts from 3D parametric CAD models to working physical fabrication and control software.</p>
+          <div style="background: rgba(10, 16, 30, 0.7); padding: 1.2rem; border: 1px solid var(--nasa-border); border-radius: var(--radius-sm);">
+            <div style="color: var(--nasa-cyan); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 03</div>
+            <h3 style="font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-white); margin-bottom: 0.4rem;">Rapid Prototyping (CAD to Code)</h3>
+            <p style="font-size: 0.9rem; color: var(--text-lunar);">Taking concepts from 3D parametric CAD models to working physical fabrication and control software.</p>
           </div>
 
-          <div style="background: rgba(0,0,0,0.35); padding: 1.2rem; border: 1px solid var(--border-warm); border-radius: var(--radius-sm);">
-            <div style="color: var(--amber-bright); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 04</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-cream); margin-bottom: 0.4rem;">First-Principles Problem Solving</h3>
-            <p style="font-size: 0.9rem; color: var(--text-parchment);">Dissecting multidisciplinary engineering challenges across mechanics, electronics, and software.</p>
+          <div style="background: rgba(10, 16, 30, 0.7); padding: 1.2rem; border: 1px solid var(--nasa-border); border-radius: var(--radius-sm);">
+            <div style="color: var(--nasa-cyan); font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 0.3rem;">PILLAR 04</div>
+            <h3 style="font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-white); margin-bottom: 0.4rem;">First-Principles Problem Solving</h3>
+            <p style="font-size: 0.9rem; color: var(--text-lunar);">Dissecting multidisciplinary engineering challenges across mechanics, electronics, and software.</p>
           </div>
         </div>
       </section>
 
       <!-- Career History / Work Experience -->
-      <section class="retro-panel">
+      <section class="nasa-panel">
         <h2 class="panel-title">Work Experience & Achievements</h2>
         
         <div class="exp-timeline-list">
@@ -138,7 +139,7 @@
               <span class="exp-tag-period">2023 - Present</span>
             </div>
             <div class="exp-meta">Industrial Robotics & Automation Solutions • Rexburg, ID</div>
-            <p style="font-size: 0.95rem; margin-bottom: 0.9rem;">
+            <p style="font-size: 0.95rem; margin-bottom: 0.9rem; color: var(--text-lunar);">
               Leading the development of robotic warehouse storage automation and building intelligent AI-driven customer service systems.
             </p>
             <ul class="exp-bullets">
@@ -164,7 +165,7 @@
               <span class="exp-tag-period">2022 - 2023</span>
             </div>
             <div class="exp-meta">Advanced Systems Lab • Rexburg, ID</div>
-            <p style="font-size: 0.95rem; margin-bottom: 0.9rem;">
+            <p style="font-size: 0.95rem; margin-bottom: 0.9rem; color: var(--text-lunar);">
               Spearheaded rapid prototyping of electromechanical mechanisms, CAD models, and autonomous software workflows.
             </p>
             <ul class="exp-bullets">
@@ -184,14 +185,14 @@
       </section>
 
       <!-- Education & Certifications -->
-      <section class="retro-panel" id="education">
+      <section class="nasa-panel" id="education">
         <h2 class="panel-title">Education & Certifications</h2>
         
         <div class="edu-cert-split">
-          <div style="background: rgba(0,0,0,0.35); padding: 1.4rem; border: 1px solid var(--border-warm); border-radius: var(--radius-sm);">
-            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--amber-bright); margin-bottom: 0.3rem;">UNIVERSITY DEGREE</div>
-            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-cream); margin-bottom: 0.2rem;">Bachelor of Science in Business Analytics</h3>
-            <div style="font-size: 1rem; color: var(--amber-primary); font-weight: 600; margin-bottom: 0.8rem;">Brigham Young University - Idaho (BYU-Idaho) • Rexburg, ID</div>
+          <div style="background: rgba(10, 16, 30, 0.7); padding: 1.4rem; border: 1px solid var(--nasa-border); border-radius: var(--radius-sm);">
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--nasa-cyan); margin-bottom: 0.3rem;">UNIVERSITY DEGREE</div>
+            <h3 style="font-family: var(--font-mono); font-size: 1.35rem; color: var(--text-white); margin-bottom: 0.2rem;">Bachelor of Science in Business Analytics</h3>
+            <div style="font-size: 0.95rem; color: var(--nasa-cyan); font-weight: 600; margin-bottom: 0.8rem; font-family: var(--font-mono);">Brigham Young University - Idaho (BYU-Idaho) • Rexburg, ID</div>
             <ul class="exp-bullets">
               <li>Focus on quantitative systems optimization, statistical modeling, and data-driven automation.</li>
               <li>Bridging business ROI and analytics with hands-on robotics engineering, SolidWorks CAD modeling, and autonomous AI agents.</li>
@@ -216,16 +217,16 @@
       </section>
 
       <!-- Next Steps Call to Action -->
-      <div style="text-align: center; margin: 2rem 0;">
-        <a href="projects.html" class="btn-quirky">View Project Archives / X-Files 🗄️</a>
-        <a href="contact.html" class="btn-quirky-sec" style="margin-left: 0.8rem;">Establish Comms ✉️</a>
+      <div style="text-align: center; margin: 2rem 0; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="projects.html" class="btn-nasa-primary">View Payload Archives 🗄️</a>
+        <a href="contact.html" class="btn-nasa-secondary">Comms Transmission 📡</a>
       </div>
 
     </div>
 
     <!-- FOOTER -->
     <footer class="retro-footer">
-      <p>© <span id="footer-year">2026</span> Collin Webb ⋆✴︎˚｡⋆ Rexburg, ID ⋆✴︎˚｡⋆ Vintage 80s Broadcast Edition</p>
+      <p>NATIONAL AERONAUTICS AND SPACE ADMINISTRATION // FLIGHT TELEMETRY NODE 8086 // REXBURG, ID</p>
     </footer>
 
   </div>
