@@ -89,22 +89,35 @@ function setupTvChannels() {
 }
 
 // ===================================================================
-// RANDOM CHANNEL EASTER EGG (Home Page Sticker)
+// VINTAGE DECORATIONS INTERACTION
 // ===================================================================
 function setupRandomChannelCard() {
-  const easterCard = document.getElementById("random-channel-card");
-  if (!easterCard) return;
-
+  const vhsTape = document.querySelector(".vhs-cassette");
   const channelBtns = Array.from(document.querySelectorAll(".ch-btn[data-src]"));
-  if (channelBtns.length === 0) return;
 
-  easterCard.addEventListener("click", () => {
-    // Pick next channel
-    const currentActive = document.querySelector(".ch-btn.active");
-    const currentIdx = channelBtns.indexOf(currentActive);
-    const nextIdx = (currentIdx + 1) % channelBtns.length;
-    channelBtns[nextIdx].click();
-  });
+  if (vhsTape && channelBtns.length > 0) {
+    vhsTape.addEventListener("click", () => {
+      const currentActive = document.querySelector(".ch-btn.active");
+      const currentIdx = channelBtns.indexOf(currentActive);
+      const nextIdx = (currentIdx + 1) % channelBtns.length;
+      channelBtns[nextIdx].click();
+      showToast("📼 Loaded Vintage VHS Tape — Channel Switched!");
+    });
+  }
+
+  const books = document.querySelector(".vintage-books-stack");
+  if (books) {
+    books.addEventListener("click", () => {
+      showToast("📚 Engineering Stack: Robotics, SolidWorks CAD, & Business Analytics!");
+    });
+  }
+
+  const polaroid = document.querySelector(".polaroid-photo");
+  if (polaroid) {
+    polaroid.addEventListener("click", () => {
+      showToast("📸 Snapshot: Collin Webb • Tech Lab // Rexburg, ID");
+    });
+  }
 }
 
 // ===================================================================

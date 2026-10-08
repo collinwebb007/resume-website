@@ -351,85 +351,48 @@ body {
   gap: 0.85rem;
 }
 
-/* Quirky Floating Stickers Grid */
-.quirky-stickers-zone {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.4rem;
-  margin: 3.5rem 0 2rem 0;
+/* =============================================================
+   CHLOE-STYLE CENTRAL TV & SURROUNDING VINTAGE DECOR STAGE
+   ============================================================= */
+.stage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 1rem auto 4rem auto;
+  padding: 1rem 0;
 }
 
-.quirky-badge-card {
-  background: var(--bg-panel);
-  border: 1px solid var(--border-warm);
-  border-radius: var(--radius-md);
-  padding: 1.4rem;
-  text-decoration: none;
-  color: inherit;
+.stage-masthead {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.stage-grid-arena {
+  display: grid;
+  grid-template-columns: 260px 1fr 260px;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+/* Central TV Column */
+.arena-center-tv {
+  grid-column: 2;
+  grid-row: 1 / span 3;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  position: relative;
-  overflow: hidden;
-}
-
-.quirky-badge-card:hover {
-  transform: translateY(-8px) rotate(1deg) scale(1.02);
-  border-color: var(--amber-primary);
-  background: var(--bg-panel-hover);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(245, 158, 11, 0.25);
-}
-
-.badge-topline {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--amber-primary);
-  margin-bottom: 0.5rem;
+  z-index: 10;
 }
 
-.badge-tag {
-  background: rgba(245, 158, 11, 0.12);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-pill);
-}
-
-.badge-title {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  color: var(--text-cream);
-  line-height: 1.2;
-  margin-bottom: 0.4rem;
-}
-
-.badge-desc {
-  font-size: 0.9rem;
-  color: var(--text-parchment);
-  line-height: 1.5;
-  margin-bottom: 0.8rem;
-}
-
-.badge-arrow {
-  margin-top: auto;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--amber-bright);
-  font-weight: bold;
-}
-
-/* =============================================================
-   HERO TV SECTION (MINI CRT SCREEN)
-   ============================================================= */
 .hero-tv-container {
-  max-width: 720px;
-  margin: 2.5rem auto;
+  width: 100%;
+  max-width: 640px;
   background: linear-gradient(180deg, #3d2719 0%, #26170d 50%, #170d06 100%);
   border: 10px solid #4a3020;
   border-radius: var(--radius-lg);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(245, 158, 11, 0.15);
   overflow: hidden;
   position: relative;
 }
@@ -447,6 +410,245 @@ body {
   height: 100%;
   object-fit: cover;
   filter: sepia(0.35) contrast(1.1) brightness(0.92);
+}
+
+/* Surrounding Interactive Topic Buttons */
+.topic-button-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  position: relative;
+  z-index: 15;
+  cursor: pointer;
+}
+
+.topic-button-card:hover {
+  transform: translateY(-8px) scale(1.06);
+  border-color: var(--amber-primary);
+  background: var(--bg-panel-hover);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 158, 11, 0.35);
+}
+
+.topic-icon-wrap {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  background: rgba(18, 11, 6, 0.8);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.topic-meta-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--amber-primary);
+  text-transform: uppercase;
+}
+
+.topic-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--text-cream);
+  line-height: 1.15;
+  margin: 0.15rem 0;
+}
+
+.topic-action-hint {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--amber-bright);
+}
+
+/* Floating Animations */
+.float-1 { animation: floatBob 6s ease-in-out infinite alternate; }
+.float-2 { animation: floatBob 7s ease-in-out 1s infinite alternate-reverse; }
+.float-3 { animation: floatBob 5.5s ease-in-out 0.5s infinite alternate; }
+.float-4 { animation: floatBob 6.5s ease-in-out 1.5s infinite alternate-reverse; }
+
+@keyframes floatBob {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+  100% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* =============================================================
+   VINTAGE DECORATIONS (POSTERS, BOOKS, VHS, POLAROID)
+   ============================================================= */
+.decor-object {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  z-index: 12;
+}
+
+.decor-object:hover {
+  transform: translateY(-8px) scale(1.08) !important;
+  filter: drop-shadow(0 12px 25px rgba(245, 158, 11, 0.4));
+}
+
+/* 1. Vintage VHS Cassette */
+.vhs-cassette {
+  background: #181818;
+  border: 2px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vhs-label-sticker {
+  background: #f4ede1;
+  border: 1px solid #c7b89f;
+  padding: 0.35rem 0.6rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #1a1a1a;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.vhs-tape-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  background: #0d0d0d;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+.vhs-spool {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #333;
+}
+
+/* 2. Vintage Hardcover Books Stack */
+.vintage-books-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0.5rem;
+}
+
+.book-spine {
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  color: #fef3c7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6), inset 0 2px 2px rgba(255,255,255,0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  white-space: nowrap;
+}
+
+.book-1 { background: linear-gradient(90deg, #78350f, #92400e); width: 220px; }
+.book-2 { background: linear-gradient(90deg, #1e3a8a, #1d4ed8); width: 235px; }
+.book-3 { background: linear-gradient(90deg, #064e3b, #047857); width: 210px; }
+
+/* 3. Vintage Wall Posters */
+.retro-poster {
+  background: #1c140d;
+  border: 6px solid #3a2517;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.poster-art-area {
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #450a0a 100%);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.45rem;
+}
+
+.poster-caption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--amber-bright);
+  font-weight: bold;
+}
+
+/* 4. Vintage Polaroid Snapshot */
+.polaroid-photo {
+  background: #fbf8f2;
+  border-radius: 3px;
+  padding: 0.6rem 0.6rem 1.4rem 0.6rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.75), 0 0 2px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+
+.polaroid-image-frame {
+  width: 100%;
+  height: 120px;
+  background: #1f1710;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber-bright);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.polaroid-caption {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.78rem;
+  font-weight: bold;
+  color: #33261a;
+  margin-top: 0.6rem;
+  text-align: center;
+}
+
+/* Extra Stage Decor Row (Bottom of stage) */
+.stage-decor-gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border-warm);
 }
 
 .screen-badge {
@@ -922,5 +1124,19 @@ body {
   }
   .edu-cert-split {
     grid-template-columns: 1fr;
+  }
+  .stage-grid-arena {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+  }
+  .arena-center-tv {
+    order: -1;
+    width: 100%;
+  }
+  .topic-button-card {
+    width: 100%;
+    max-width: 480px;
   }
 }
