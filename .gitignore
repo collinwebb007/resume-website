@@ -1,0 +1,9 @@
+# Dependencies & Builds
+node_modules/
+.DS_Store
+.env
+.env.local
+.vercel/
+
+# Temporary & Logs
+*.log
